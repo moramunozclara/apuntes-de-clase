@@ -1,5 +1,4 @@
 
-
 const artGallery = [ 
     { id: 1, artist: "Monet", title: "Water Lilies", year: 1916, isExhibited: true },
     { id: 2, artist: "Van Gogh", title: "Starry Night", year: 1889, isExhibited: true }, 
@@ -13,35 +12,62 @@ const artGallery = [
     { id: 10, artist: "Vermeer", title: "Girl with a Pearl Earring", year: 1665, isExhibited: true }
     ];
 
-
-
 console.clear();
 
+// Ejercicio 1: forEach y template strings
+artGallery.forEach (obra => obra. {
+  
+  // let isExhibited = "NO SE";
+  // if(obra.isExhibited){
+  //   isExhibited = "SE";
+  // }
+  const esExhibida = obra.isExhibited ? "SE" : "NO SE" ;
 
-artGallery.filter( filtrarObras);
+  console.log(`La obra ${obra.title} por el autor ${obra.autor} ${esExhibida} encuentra exhibida` );
 
-function filtrarObras (obra){
-  //   {nombre: "Harry", apellido: "Potter", casa: "Gryffindor", atacar:""},
-  return obra.title == "x";
-}
+})
+
+// Ejercico 2: MAP para mostrar solo los títulos en la consola
+const listaTitulo = artGallery.map (obra => obra.title);
+  console.log(listaTitulo);
+
+// Ejercicio 3: FILTER en Exhibición
+const listaEnExhibicion = artGallery.filter(obra => obra.isExhibited === true);
+  console.log(listaEnExhibicion);
+
+// Ejercicio 4: FIND, solo devuelve un titulo de obra, con "The Night Watch"
+const rondaDeNoche = artGallery.find(obra => obra.title == "The Night Watch");
+  console.log(rondaDeNoche);
+
+//Ejercicio 5: SOME (verifica si hay o no con true o false), con 1503
+const obraExampleYear = artGallery.some(obra => obra.year == 1503);
+  console.log(obraExampleYear);
+
+//Ejercicio 6: EVERY ()
+const obraMyBirthDate = artGallery.every(obra => obra.year < 1998);
+  console.log(obraMyBirthDate);
 
 
-// Ejercico 2
-
-const titulosObras.map( t => mago.casa == "Gryffindor" );
-
-
-const listaTitulo = artGallery.map ( obra => obra.title);
-
-
-// Ejercicio 3
+// Ejercicio 7: findIndex con la obra 7ª
+// const obraSeptina = artGallery.findIndex(obra => obra == 7);
+// Ejercicio 7: findIndex de la obra "Mona Lisa"
+const posicionObra = artGallery.findIndex(obra => obra.title == "Mona Lisa");
+  console.log(posicionObra);
 
 
-   
+
+// Ejercicio 8: añadir nuevas obras al array de artGallery
+
+//Ejercicio 9: cambiar el estadi de isExhibited de una obra enviándole el id
+
+
+
 
 // // Actividades:
 // Usa forEach y Template Strings para mostrar los títulos de las obras por consola en el formato:
 // "La obra TITULO DE OBRA por el autor AUTOR DE LA OBRA (AÑO) NO SE/SE encuentra exhibida"
+
+
 // Usa map para crear un nuevo array que contenga solo los títulos de las obras y muéstralo en consola.
 // Usar filter para crear un array de obras que están actualmente en exhibición y mostrarlas por consola.
 // Crear una función de búsqueda que reciba como parámetro un título de obra, y que utilice find para buscar esa obra específica
