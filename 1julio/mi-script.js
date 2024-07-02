@@ -15,7 +15,7 @@ const artGallery = [
 console.clear();
 
 // Ejercicio 1: forEach y template strings
-artGallery.forEach (obra => obra. {
+artGallery.forEach(obra => obra. {
   
   // let isExhibited = "NO SE";
   // if(obra.isExhibited){
@@ -58,7 +58,7 @@ const posicionObra = artGallery.findIndex(obra => obra.title == "Mona Lisa");
 
 // Ejercicio 8: añadir nuevas obras al array de artGallery
 
-//Ejercicio 9: cambiar el estadi de isExhibited de una obra enviándole el id
+//Ejercicio 9: cambiar el estado de isExhibited de una obra enviándole el id
 
 
 
