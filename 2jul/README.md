@@ -10,9 +10,6 @@ Fue creado para node.JS. Nuestro entorno de trabajo de Backend. Del lado del ser
 -No es común pero se puede usar el navegador con la ayuda de herramientas como Broswerify / Webpack / Parcel
 
 
-
-
-
 ### Importacion de un único elemento
 
 ```js
@@ -86,7 +83,7 @@ console.log(mensaje1, mMensaje, mensaje2, mensaje3);
   "name": "3Proyecto con ES6",
   "version": "1.0.0",
   "main": "mi-script2.js",
-  "type":"module",
+  "type":"module", //se añade solo al crearse
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -101,7 +98,7 @@ console.log(mensaje1, mMensaje, mensaje2, mensaje3);
 En el frontend tenemos que cambiar nuestras etiqutas de script
 
 ```html
-<script type="module" src="./js/mi-script.js">
+<script type="module" src="./js/mi-script.js"> //tenemos que añadirlo nosotros
 ```
 
 # React
