@@ -17,9 +17,9 @@ function App() {
   ];
 
 
-  const usuario1 = [
+  const usuario1 = 
     {nombre: "Clara", edad:"25", ocupacion:"alumna"}
-  ];
+  ;
 
   //imprimir en pantalla
 
@@ -27,8 +27,9 @@ function App() {
     <>
     <h1>React component party</h1>
     <TarjetaUsuario nombre="Tomi" edad="40" ocupacion="profe"/>
+    <TarjetaUsuario {...usuario1}/>
     <TarjetaUsuario nombre="Ceci" edad="32" ocupacion="alumna"/>
-    <Usuario1/>
+
 
 
     <ListaTareas tareas={tareas}/>
