@@ -1,30 +1,32 @@
-
-
-
 import Tarea from "./Tarea";
 
-const ListaTareas = ({tareas}) => {
+const ListaTareas = ({listaTareas}) => {
 
-
-console.log(tareas);
-
-
+    console.log(listaTareas);
 
     return (
+        // Creamos un contenedor  y le creamos la clase .Card para darle un estilo en nuestro CSS
+        // Dentro de este contenedor se mosntrará toda la info de tareas, por eso va dentro
         <div className="Card">
-        <h3>Lista de tareas</h3>
 
-        {tareas.map(element => {
-            const {id, tarea, isCompletada} = element;
-            return (
-                <div key={id}>
-                    <h3>Tu tarea es: </h3>
-                 {tarea} 
-                </div>
-        )
+            {/* Encabezado de la lista */}
+            <h2>Lista de tareas</h2>
+            
 
-            })
-        }
+            {listaTareas.map(element => {
+                const {id, nombreTarea, isCompletada} = element;
+                return (
+                    // Devuelve el componente Tarea.jsx
+                    <Tarea
+                    // Devuelve la propiedad (sin corchetes), en su {variable} Aprender, Leer...)
+                    // key={id} es la forma en que React identifica cada componente individualmente
+                    key={id} 
+                    nombreTarea={nombreTarea} 
+                    isCompletada={isCompletada}    
+                    />
+                )
+            })}
+
         </div>
     )
 }

@@ -13,10 +13,10 @@ const TarjetaUsuario = ( {edad, nombre, ocupacion} ) => {
             <h3>Tarjeta usuario</h3>
             {nombre}
             <p></p>
-            {edad}
+            {edad}             
+            <p></p>
             {ocupacion}
         </div>
-
 )
  }
 
