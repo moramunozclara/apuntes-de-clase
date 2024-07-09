@@ -26,6 +26,11 @@ function App() {
       <Interruptor/>
       </div>
 
+
+      <h2>Ejercicio 2: Interruptor ON/OFF</h2>
+      <ListaTareasBasica/>
+      </div>
+
     </>
   )
 }

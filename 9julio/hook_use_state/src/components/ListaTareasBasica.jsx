@@ -1,10 +1,11 @@
+
+
 import { useState } from 'react'
 
 
 
 
 export const ListaTareasBasica = () => {
-
 
     const datosTareas = ["Tarea1", "Tarea2", "Tarea3"]
 
@@ -48,7 +49,7 @@ export const ListaTareasBasica = () => {
 
                 {listaTareasBasica.map((tarea, index) =>
                 {return (<li>   
-                    
+
                 </li>)}) }
 
             {/* <li>Tarea 1</li>
