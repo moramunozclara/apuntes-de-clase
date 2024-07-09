@@ -7,6 +7,9 @@ import TarjetaUsuario from './components/TarjetaUsuario'
 // 2º: Importar listaa de tareas
 import ListaTareas from './components/tareas/ListaTareas'
 
+// 3º: Importar perfil El Barto
+import PerfilUsuario from './components/PerfilUsuario';
+
 function App() {
 
   const listaTareas = [
@@ -31,7 +34,9 @@ function App() {
     <TarjetaUsuario {...usuario1}/>
     <hr />
     <ListaTareas listaTareas={listaTareas}/>
-        
+    <hr />
+    <PerfilUsuario/>
+
     </>
   )
 }

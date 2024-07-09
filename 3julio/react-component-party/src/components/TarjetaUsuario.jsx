@@ -4,7 +4,6 @@
 const TarjetaUsuario = ( {edad, nombre, ocupacion} ) => {
 
     //DECONSTRUCCION
-
     // const {edad, nombre, ocupacion} = item;
     // console.log(item);
 

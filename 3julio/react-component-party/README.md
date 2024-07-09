@@ -1,13 +1,13 @@
 # Ejercicios React-Component-Party
 
-## Ejercicio 1: Setup + Tarjeta de Usuario
+## Ejercicio 1: Setup + Tarjeta de Usuario ✅
 
 - Crear un proyecto nuevo en Vite con React que se llame `react-component-party`
 - Crear un componente `TarjetaUsuario` que reciba props para mostrar información de un usuario (nombre, edad, ocupación).
 - Crea los estilos para este componente en un archivo CSS `App.css`
 - Importa el componente en nuestro archivo `App.js` y cargue 3 tarjetas con distintos valores de usuarios.
 
-## Ejercicio 2: Lista de Tareas
+## Ejercicio 2: Lista de Tareas ✅
 
 - Crear un componente `tareas/ListaTareas` que reciba un array de tareas para este verano como props.
 - Crear un segundo componente `tareas/Tarea` que reciba props para mostrar cada una de las tareas.
@@ -31,7 +31,7 @@
 - Atención, este objeto posee otro objeto anidado dentro, deconstruir como corresponde.
 
 ```js
-  // PerfilUsuario  (Objeto Anidado) 
+  // PerfilUsuario  (Objeto Anidado) ¡
   const userData =  {
     nombre: 'El Barto',
     email: 'elbarto@fox.com',
