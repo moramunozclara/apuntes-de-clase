@@ -6,7 +6,7 @@ import './App.css'
 import Contador from './components/Contador.jsx'
 import Interruptor from './components/Interruptor.jsx'
 import {ListaTareasBasica} from './components/ListaTareasBasica.jsx'
-import { Formulario2 } from './components/Formulario2.jsx'
+import { Formulario } from './components/Formulario.jsx'
 // CON LLAVES ORQUE SE EXPORTÓ COMO OBJETO Y NO COMO DEFAULT
 
 
@@ -35,8 +35,14 @@ function App() {
 
       <div className="card">
       <h2>Formulario 2</h2>
-      <Formulario2/>
+      {/* <Formulario2/> */}
       </div>
+
+      <div className="card">
+      <h2>Formulario 2</h2>
+      <Formulario/>
+      </div>
+
 
     </>
   )
