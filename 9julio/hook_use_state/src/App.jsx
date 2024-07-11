@@ -7,7 +7,11 @@ import Contador from './components/Contador.jsx'
 import Interruptor from './components/Interruptor.jsx'
 import {ListaTareasBasica} from './components/ListaTareasBasica.jsx'
 import { Formulario } from './components/Formulario.jsx'
-// CON LLAVES ORQUE SE EXPORTÓ COMO OBJETO Y NO COMO DEFAULT
+import { FormularioDeRegistro } from './components/FormularioDeRegistro.jsx'
+import FormularioMultiple from './components/FormularioMultiple.jsx'
+
+
+// CON LLAVES SI SE EXPORTÓ COMO OBJETO Y NO COMO DEFAULT
 
 
 function App() {
@@ -41,6 +45,11 @@ function App() {
       <div className="card">
       <h2>Formulario 2</h2>
       <Formulario/>
+      </div>
+
+      <div className="card">
+      <h2>Formulario de registro</h2>
+      <FormularioDeRegistro/>
       </div>
 
 
