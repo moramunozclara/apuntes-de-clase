@@ -20,9 +20,6 @@ const Contador = () => {
             </div>
      );
 
-
-
-
 }
- 
+
 export default Contador;

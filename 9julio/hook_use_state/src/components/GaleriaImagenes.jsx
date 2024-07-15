@@ -5,26 +5,27 @@ import { useState } from 'react'
 // sfnc
 export const GaleriaImagenes = () => {
 
-    const [imagen, setImagen] = useState(0)
+    const [indiceImagen, setIndiceImagen] = useState(0)
     // 0 es mi valor inicial
 
-    const ListaImagenes = ["imagen1.png", "imagen2.png", "imagen3.png"]
+    const listaImagenes = ["imagen1.png", "imagen2.png", "imagen3.png"]
 
+    const ultimaImagen = listaImagenes.length -1
     
     return ( 
 
         <div>
-                <img src={ListaImagenes[imagen]} alt={ListaImagenes[imagen]} />
+                <img src={listaImagenes[indiceImagen]} alt={listaImagenes[indiceImagen]} />
                 {/* <img src="imagen1.png" alt="imagen 1" /> */}
 
                 <button onClick={() => {
 
-                    if (imagen <= 0) {
-                        setImagen(2)
+                    if (indiceImagen <= 0) {
+                        setIndiceImagen(ultimaImagen)
 
                     } else {
 
-                        setImagen(imagen - 1)
+                        setIndiceImagen(indiceImagen - 1)
 
                     }
 
@@ -37,12 +38,12 @@ export const GaleriaImagenes = () => {
 
                 <button onClick={() => {
                     
-                    if (imagen >= 2) {
-                        setImagen(0)
+                    if (indiceImagen >= ultimaImagen) {
+                        setIndiceImagen(0)
                     }
 
                     else {
-                        setImagen(imagen + 1)
+                        setIndiceImagen(indiceImagen + 1)
                     }
                     
                 
@@ -51,7 +52,6 @@ export const GaleriaImagenes = () => {
 
 
                 
-
         </div>
 
      );

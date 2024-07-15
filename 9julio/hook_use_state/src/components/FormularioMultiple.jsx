@@ -4,7 +4,7 @@ import {useState} from 'react';
 // MultiStepForm
 const FormularioMultiple = () => {
     const [paso, setPaso] = useState(1);
-    const [formData, setformData] = useState({
+    const [formData, setFormData] = useState({
         nombre: "",
         email: ""
     });
@@ -14,19 +14,27 @@ const FormularioMultiple = () => {
         console.log("Enviando formulario")
     };
     const pasoAnterior = () => {
-        console.log("Anterior")
+        console.log("Anterior", paso);
+        setPaso ( const  = () => {
+            return (  );
+        }
+         
+        export default ; )
     };
     const pasoSiguiente = () => {
-        console.log("Siguiente")
+        console.log("Siguiente",)
     };
     
-    const renderizarPasos = () => 
-        { switch(paso){
-            case 1: return <Paso1/>;
-            case 2: return <Paso2/>;
-            case 3: return <Paso3/>;
-        } };
+    const renderizarPasos = () =>  { 
+        switch(paso){
+            case 1: return <Paso1 data={formData} setData={setFormData}/>;
+            case 2: return <Paso2 data={formData} setData={setFormData}/>;
+            case 3: return <Paso3 data={formData} setData={setFormData}/>;
+            default: return null;
+        } 
+    };
     ;
+    
 
     return ( 
         <>
