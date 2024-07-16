@@ -50,6 +50,11 @@ Es util para
 ## ejercicios useEffect
 
 1. Crea componente que muestre msj en consola cuando el componente se muestre por 1ª vez
+
 2. Crea componente que registre elt iempo desde que el comp se cargó 
-3. Crea componente que obtenga datos de una API y los muestre en pantalla (https://jsonplaceholder.typicode.com/posts)
-4. Crea un contador que
+
+3. Crea componente que obtenga datos de una API y los muestre en pantalla 
+(https://jsonplaceholder.typicode.com/posts)
+
+4. Crea un contador con botones para incrementar y decrementar el valor. Usa useEffect para registrar cada vez que el valor del contador cambie
+

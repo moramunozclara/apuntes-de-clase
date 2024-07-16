@@ -20,14 +20,16 @@ export const Ejercicio1UseEffect = () => {
 // }
 
 
-// Crea componente que obtenga datos de una API y los muestre en pantalla
+// Ejercicio 3: Crea componente que obtenga datos de una API y los muestre en pantalla
 
-export const Ejercicio3UseEffect = () => {
+// export const Ejercicio3UseEffect = () => {
 
-    return fetch('https://jsonplaceholder.typicode.com/posts') ( 
-        <h2>Ejercicio 3</h2>
-     );
-}
+    // const [data, setData] = useState([]);
+
+//     return fetch('https://jsonplaceholder.typicode.com/posts/1')
+//   .then((response) => response.json())
+//   .then((json) => console.log(json));
+//      }
 
 
 // export const Ejercicio4UseEffect = () => {
