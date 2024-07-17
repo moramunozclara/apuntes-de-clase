@@ -1,16 +1,21 @@
 import {useState, useEffect} from 'react';
 // import { postsApi } from 'https://jsonplaceholder.typicode.com/posts';
 
+import {FetchDataComp} from './FetchDataComp'
 
 
 export const Ejercicio1UseEffect = () => {
-    console.log("El componente se mostró por primera vez");
 
-    return ( 
-        <h2>Ejercicio 1</h2>
-     );
+            useEffect(() => {
+                console.log("El componente se mostró por primera vez");
+            }, [])
+            // [] array vacío para ejecutar mi función 
+            // y solo cuando carga el componente
+
+            return ( 
+                <h2>Ejercicio 1</h2>
+            );
 }
-
 
 // export const Ejercicio2UseEffect = () => {
 
@@ -22,14 +27,31 @@ export const Ejercicio1UseEffect = () => {
 
 // Ejercicio 3: Crea componente que obtenga datos de una API y los muestre en pantalla
 
-// export const Ejercicio3UseEffect = () => {
 
-    // const [data, setData] = useState([]);
+// fetch API
+export const Ejercicio3UseEffect = () => {
 
-//     return fetch('https://jsonplaceholder.typicode.com/posts/1')
-//   .then((response) => response.json())
-//   .then((json) => console.log(json));
-//      }
+    const [data, setData] = useState([]);
+
+    const FetchDataComp = () => {     
+        fetch('https://jsonplaceholder.typicode.com/posts/1')
+        // return fetch('https://randomuser.me/API/?gender=female')
+
+        .then((response) => response.json())
+        .then((json) => console.log("Obtuve estos datos:", json));
+ }
+
+    return ( 
+            <h2>Ejercicio 3</h2>
+            // <div>
+            //     <h3>Datos de usuario:
+            //         <div></div>
+            //     </h3>
+            // </div>
+            );
+
+
+}
 
 
 // export const Ejercicio4UseEffect = () => {

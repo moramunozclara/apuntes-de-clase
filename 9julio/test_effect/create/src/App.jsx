@@ -11,7 +11,6 @@ function App() {
       <div>
         <Ejercicio1UseEffect/>
 
-
         <Ejercicio3UseEffect/>
 
 
