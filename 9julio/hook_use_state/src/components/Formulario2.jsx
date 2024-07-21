@@ -29,7 +29,7 @@ export const Formulario2 = () => {
     ];
 
 
-//  CORREGIR DE AQUÍ -------------------------------------------
+//  CORREGIR AQUÍ -------------------------------------------
     const handleSubmit = (e) => {
         e.preventDefault();
         const listaErrores = validateForm = () => {
