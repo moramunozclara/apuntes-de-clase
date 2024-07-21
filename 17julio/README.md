@@ -1,5 +1,4 @@
 # API de Rick and Morty
-hhhh
 
 En esta actividad, vamos a explorar la API de Rick and Morty (https://rickandmortyapi.com/) para crear una aplicación web utilizando React. La API ofrece tres categorías principales: Personajes, Lugares y Episodios.
 1. Para comenzar, visita la web de la API de Rick and Morty (https://rickandmortyapi.com/) para entender cómo está estructurada la API y qué datos proporciona en cada categoría. Examina los endpoints disponibles y la estructura de los datos.
