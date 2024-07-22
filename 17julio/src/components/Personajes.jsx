@@ -28,15 +28,16 @@ useEffect(() => {
 
         {personajes.map(function (personaje) {
             return (
-                <>
-                <div>
-
-                    key={personaje.name}
-
+                <div key={personaje.id}>
+                    {personaje.id}{'. '}
+                    {'Name:'} {personaje.name} 
+                    {' '} 
+                    {'Gender:'} {personaje.gender}
+                    <img src={personaje.image} alt={personaje.name} />
                     </div>
-                </>
             );
         })}
+        
         </>
 
 
