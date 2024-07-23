@@ -1,6 +1,6 @@
 
 // 1º: importar useState y useEffect
-import React { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 
             // atajo usf = useState function
@@ -23,7 +23,12 @@ function Episodios() {
 
         //toma los datos JSON y actualiza el estado "episodios"
         // con los resultados.
-        .then(data => setEpisodios(data.results))
+        .then(data => {
+            console.log("Los datos de personaje son: ", data)
+            setEpisodios(data.results)
+            setInfo(data.info)
+            }
+        )
 
         /* 
             DATA son los datos obtenidos de la respuesta en formato JSON,
@@ -39,7 +44,11 @@ function Episodios() {
     */
 
 
-    return (  );
+    return ( 
+
+            <h2>Episodios</h2>
+        
+     );
 }
 
 export default Episodios;            
