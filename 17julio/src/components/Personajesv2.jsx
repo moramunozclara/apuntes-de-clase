@@ -33,6 +33,8 @@ const Personajesv2 = () => {
         // a veces devuelve error en lugar de results
         if(objeto.error){
             setErrorData("No se encontraron resultados");
+
+            
             setPersonajes([]);
             setInfo({});
             return;
@@ -121,9 +123,9 @@ const PersonajeCard = ({name, image, species, status, index}) => {
                     {status=="unknown"  && <span className="material-symbols-outlined">device_unknown</span>}
                     {species} 
                 </span>
-                {species == "Alien" ? <AlienAI color={color} />
+                {/* {species == "Alien" ? <AlienAI color={color} />
                                     : <span style={{color}}>{species[0].toUpperCase()}</span>
-                }
+                } */}
             </div>
             <img src={image} alt={name} />
             <div>

@@ -3,6 +3,8 @@ import { useState } from 'react'
 import './css/App.css'
 import './css/rick-and-morty.css'
 
+
+
 import Personajes from './components/Personajes'
 import Personajesv2 from './components/Personajesv2'
 import Episodios from './components/Episodios'
@@ -58,8 +60,8 @@ function App() {
               <Route path="/personajesv2" element={<Personajesv2/>}/>
               <Route path="/episodios" element={<Episodios/>}/>
               {/* path o ruta principal - RAÍZ */}
-              <Route path=""/>
-            </Routes>
+              <Route path="/" element={<Personajes/>}/>            
+              </Routes>
         </div>
     
       </main>
