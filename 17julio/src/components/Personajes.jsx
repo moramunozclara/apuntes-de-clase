@@ -16,7 +16,7 @@ const Personajes = () =>  {
 
     //                                           [] lista
     const [personajes, setPersonajes] = useState([]);
-    //                               {} objeto
+    //                               {} objeto JS, es sin comillas
     const [info, setInfo] = useState({
         count: 0,
         next: null,
@@ -43,7 +43,6 @@ useEffect(() => {
                     setErrorData("No se encontraron resultados");
                     setPersonajes([]);
                     setInfo({});
-                    return;
                 }
 
                 else {
