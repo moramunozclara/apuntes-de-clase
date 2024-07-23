@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './css/App.css'
+import Pokeapi from './components/Pokeapi'
 
 function App() {
 
@@ -7,6 +8,7 @@ function App() {
 
         <>
           <h1>Ejercicio 1. Promesas</h1>
+          <Pokeapi></Pokeapi>
         </>
   )
 

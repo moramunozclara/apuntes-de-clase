@@ -44,25 +44,20 @@ const Pokeapi = () => {
 
     return (
 
-        // ETIQUETA VACÍA SIEMPRE, Y DENTRO TODO 
+        // ETIQUETA VACÍA SIEMPRE, Y DENTRO TODO EL CODIGO 
         <>
-
-            {personajes.map(function (personaje) {
+    
+        {pokeapi.map(function (pokemon) {
                         return (
-                            <div key={personaje.id}>
-                                {personaje.id}{'. '}
-                                {'Name:'} {personaje.name} 
+                            <div key={pokemon.id}>
+                                {pokemon.id}{'. '}
+                                {'Name:'} {pokemon.name} 
                                 {' '} 
-                                {'Gender:'} {personaje.gender}
-                                <img src={personaje.image} alt={personaje.name} />
+                                {'Gender:'} {pokemon.url}
+                                {/* <img src={pokemon.image} alt={pokemon.name} /> */}
                                 </div>
                         );
-                    })}
-        
-        
-        
-        
-        
+                    })}        
         
         </>
         
@@ -71,3 +66,15 @@ const Pokeapi = () => {
 }
  
 export default Pokeapi;
+
+
+// personajes.map(function (personaje) {
+//     return (
+//         <div key={personaje.id}>
+//             {personaje.id}{'. '}
+//             {'Name:'} {personaje.name} 
+//             {' '} 
+//             {'Gender:'} {personaje.gender}
+//             <img src={personaje.image} alt={personaje.name} />
+//             </div>
+//     );
