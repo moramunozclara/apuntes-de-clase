@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react'
-import './css/Pokeapi.css'
+import '../css/Pokeapi.css'
 
 
 const Pokeapi = () => {
 
-    const [pokeapi, setPokeapi] = useState({
- 
-    });
+    const [pokeapi, setPokeapi] = useState([]);
 
     const [error, setError] = useState("");
 
@@ -47,7 +45,7 @@ const Pokeapi = () => {
         // ETIQUETA VACÍA SIEMPRE, Y DENTRO TODO EL CODIGO 
         <>
     
-        {pokeapi.map(function (pokemon) {
+        {pokeapi.map(function(pokemon) {
                         return (
                             <div key={pokemon.id}>
                                 {pokemon.id}{'. '}
