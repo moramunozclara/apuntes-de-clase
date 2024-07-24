@@ -61,7 +61,9 @@ const Personajesv2 = () => {
             <h3>Personajes</h3>
 
             <div className="flexBetween">
+                {/* Botón Anterior */}
                 <button disabled={!info.prev} onClick={() => { getPersonajes(info.prev) } }>Ant</button>
+
                 <div className="flexCenter">
                     <input  type="text" 
                             onChange={ handleFilterByName } 
@@ -70,6 +72,8 @@ const Personajesv2 = () => {
                             style={{width:"200px"}
                     }/>
                     {filter} ({info.count})
+
+                    {/* Botón Buscar */}
                     <button className="flexCenter" style={{background:"red", color:"white", padding: "5px", width: "20px", height: "20px", fontSize:"small"}} onClick={
                         () => {
                             setFilter("");

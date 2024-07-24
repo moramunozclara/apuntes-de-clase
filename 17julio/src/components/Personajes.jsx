@@ -58,35 +58,23 @@ useEffect(() => {
 
         // 1º crear lel filtro por nombre
         const handleFilterByName = (e) => {
+
             const string = e.target.value;
+                    // cadena de texto
             setFilter(string);
+            // mostrar en consola el texto que se ingresó
             console.log(string);
+            // si quitando los espacios de fuera la cadena de texto es superior a 3 caracteres,
             if(string.trim().length > 3){
+                // devolver los personajes y añadir la cadena de texto a la url
             getPersonajes(`https://rickandmortyapi.com/api/character/?name=${string.trim()}`);
             }
-
         }
 
 
     return ( 
         <>
-        <h2>2Personajes</h2>
-
-        {personajes.map(function (personaje) {
-            return (
-
-
-
-                
-                // <div key={personaje.id}>
-                //     {personaje.id}{'. '}
-                //     {'Name:'} {personaje.name} 
-                //     {' '} 
-                //     {'Gender:'} {personaje.gender}
-                //     <img src={personaje.image} alt={personaje.name} />
-                //     </div>
-            );
-        })}
+            <h2>texto auxiliar</h2>
         
         </>
 
