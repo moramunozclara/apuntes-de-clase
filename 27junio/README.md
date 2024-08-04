@@ -13,25 +13,24 @@ mkdir es make directory
 cd (change directory) nombre-carpeta
 
 #Crear nuevo archivo
-MAC touch nombre-archivo
-WINDOWS type null > nombre-archivo
-#Posibles opciones para crear archivos en windows
-type null > nomnre-archivo.ecct
-echo. > nombre_archivo.txt
+MAC: touch nombre-archivo
+  WINDOWS: type null > nombre-archivo
+  #Posibles opciones para crear archivos en windows
+  type null > nomnre-archivo.ecct
+  echo. > nombre_archivo.txt
+  #En powershell
+  New-Item -Path . -Name "no,bre_del_archivo.text"
 
-#En powershell
-New-Item -Path . -Name "no,bre_del_archivo.text"
-
-#ovimiento entre carpetas
+#Movimiento entre carpetas
 cd nombre-carpeta
+  # en windows me muevo entre discos dando C:,  D:, X: ...
 
-# ir a la raiz de nuestro sostema
+#Ir a la raíz de nuestro sistema
  cd / 
 
-# en windows me muevo entre discos sando C:,  D:, X: ...
 
 #Volver una o varias carpetas
-cd . #me queso en la misma carpeta. sirve para refrerenciar la carpeta actual (como en ./ )
+cd . #me quedo en la misma carpeta. sirve para refrerenciar la carpeta actual (como en ./ )
 cd ..
 cd ../../../..
 cd ../usuarios/ejemplo/mi-carpeta
@@ -72,7 +71,7 @@ node mi-script.js
 
 # ¿Qué es un NPM?
 
-NODE PACKAGE MANAGER es el administrador de paruqetes por defecto en Node. Lps àquertes son modulos de codigo que se pieden instalar y usar en nuestros proyectos.
+NODE PACKAGE MANAGER es el administrador de paquetes por defecto en Node. Los paquetes son módulos de código que se pueden instalar y usar en nuestros proyectos.
 Por ejemplo `EXPRESS`, `AXIOS`, `NODEMON`, `CHALK`, `MOMENT`, etc
 
 ```bash
@@ -96,8 +95,7 @@ npm uninstall nombre-paquete
 # Flag -g instala Globalmente en todo mi servidor y proyectos
 npm i nombre-paquete -g
 
-# Flag -g instala dependencias de desarrollador
-
+# Flag -D instala dependencias de desarrollador
 npm i nombre-paquete --save-dev
 npm i nombre-paquete -D
 
@@ -118,3 +116,8 @@ npm update nombre-paquete
   },
 
   // y se ejecuta con "npm run start" o "npm run dev"
+
+  // CUANDO ESTE CÓDIGO SE ABRE DE NUEVO, HAY QUE INSTALAR NODE MODULES
+  // 1. cd carpeta 27junio
+  // 2. npm install
+  // 3. npm run dev    o    npm run start

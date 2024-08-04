@@ -117,17 +117,17 @@ npm update nombre-paquete
     "test": "echo \"Error: no test specified\" && exit 1"
   },
 
-  // y se ejecuta con "npm run start" o "npm run dev"
-
-
-  # Terminal y NPM
+// CUANDO ESTE CÓDIGO SE ABRE DE NUEVO, HAY QUE INSTALAR NODE MODULES
+  // 1. cd carpeta 27junio
+  // 2. npm install
+  // 3. npm run dev    o    npm run start
 
 ```
 
 # Repaso de JS (Métdos de Arrays)
 
 ```js
-constt listaColores = ["rojo", "azul", "verde"];
+const listaColores = ["rojo", "azul", "verde"];
 
 const listaMagos = [
   {nombre: "Harry", apellido: "Potter", casa: "Gryffindor", atacar:""},

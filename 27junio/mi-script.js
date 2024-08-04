@@ -22,3 +22,9 @@ function sumar (num1, num2) {
 }
 const resultado = sumar(5,23);
 console.log("5 + 23 es: ", resultado);
+
+
+  // CUANDO ESTE CÓDIGO SE ABRE DE NUEVO, HAY QUE INSTALAR NODE MODULES
+  // 1. cd carpeta 27junio
+  // 2. npm install
+  // 3. npm run dev    o    npm run start
