@@ -15,64 +15,71 @@ const artGallery = [
 console.clear();
 
 // Ejercicio 1: forEach y template strings
-artGallery.forEach(obra => obra. {
-  
+console.log("///Ejercicio 1: forEach y template strings");
+artGallery.forEach(obra => {
+  const esExhibida = obra.isExhibited ? "se encuentra exhibida" : "no se encuentra exhibida";
   // let isExhibited = "NO SE";
   // if(obra.isExhibited){
   //   isExhibited = "SE";
   // }
-  const esExhibida = obra.isExhibited ? "SE" : "NO SE" ;
+  console.log(`La obra ${obra.title} por el autor ${obra.artist} ${esExhibida}`);
+});
 
-  console.log(`La obra ${obra.title} por el autor ${obra.autor} ${esExhibida} encuentra exhibida` );
 
-})
 
-// Ejercico 2: MAP para mostrar solo los títulos en la consola
+// Ejercicio 2: MAP para mostrar solo los títulos en la consola
+console.log("///Ejercicio 2: MAP para mostrar solo los títulos en la consola");
+
 const listaTitulo = artGallery.map (obra => obra.title);
   console.log(listaTitulo);
 
+
+
 // Ejercicio 3: FILTER en Exhibición
+console.log("///Ejercicio 3: FILTER en Exhibición");
+
 const listaEnExhibicion = artGallery.filter(obra => obra.isExhibited === true);
   console.log(listaEnExhibicion);
 
+
+
 // Ejercicio 4: FIND, solo devuelve un titulo de obra, con "The Night Watch"
+console.log("///Ejercicio 4: FIND, solo devuelve un titulo de obra, con 'The Night Watch'");
+
 const rondaDeNoche = artGallery.find(obra => obra.title == "The Night Watch");
   console.log(rondaDeNoche);
 
-//Ejercicio 5: SOME (verifica si hay o no con true o false), con 1503
-const obraExampleYear = artGallery.some(obra => obra.year == 1503);
-  console.log(obraExampleYear);
 
-//Ejercicio 6: EVERY ()
+
+// Ejercicio 5: SOME (verifica si hay o no con true o false), con 1503
+console.log("///Ejercicio 5: SOME (verifica si hay o no con true o false), con 1503");
+const obraExampleYear = artGallery.some(obra => obra.year == 1503)
+const mensajeExtra = obraExampleYear ? "Se han encontrado obras de 1503" : "No se han encontrado obras de 1503";
+  console.log(obraExampleYear, mensajeExtra);
+
+
+
+// Ejercicio 6: EVERY ()
+console.log("///Ejercicio 6: EVERY() todas las obras anteriores a mi año de nacimiento: 1998");
+
 const obraMyBirthDate = artGallery.every(obra => obra.year < 1998);
-  console.log(obraMyBirthDate);
+const mensajitoExtra = obraMyBirthDate ? "todas las obras son previas a mi nacimiento" : "hay obras posteriores a mi nacimiento"
+  console.log(obraMyBirthDate, mensajitoExtra);
 
 
-// Ejercicio 7: findIndex con la obra 7ª
-// const obraSeptina = artGallery.findIndex(obra => obra == 7);
-// Ejercicio 7: findIndex de la obra "Mona Lisa"
+
+// Ejercicio 7: findIndex() de la obra "Mona Lisa"
+console.log("///Ejercicio 7: findIndex() posición en el array de la obra 'Mona Lisa'");
+
 const posicionObra = artGallery.findIndex(obra => obra.title == "Mona Lisa");
-  console.log(posicionObra);
+  console.log(`La Mona Lisa está en la posición ${posicionObra+1} `);
+// le sumo +1 porque el length de un array comienza desde el 0 y la MonaLisa es la 3ª obra
+
 
 
 
 // Ejercicio 8: añadir nuevas obras al array de artGallery
 
-//Ejercicio 9: cambiar el estado de isExhibited de una obra enviándole el id
+// Ejercicio 9: cambiar el estado de isExhibited de una obra enviándole el id
 
 
-
-
-// // Actividades:
-// Usa forEach y Template Strings para mostrar los títulos de las obras por consola en el formato:
-// "La obra TITULO DE OBRA por el autor AUTOR DE LA OBRA (AÑO) NO SE/SE encuentra exhibida"
-
-
-// Usa map para crear un nuevo array que contenga solo los títulos de las obras y muéstralo en consola.
-// Usar filter para crear un array de obras que están actualmente en exhibición y mostrarlas por consola.
-// Crear una función de búsqueda que reciba como parámetro un título de obra, y que utilice find para buscar esa obra específica
-// Usa some para verificar si hay obras en la galería de un año específico (por ejemplo, 1503).
-// Emplea every para comprobar si todas las obras son previas a un cierto año, por ejemplo tu año de nacimiento.
-// Usa findIndex para encontrar la posición en el array de una obra específica.
-// Agregar una función que permita añadir nuevas obras al array galería
-// Agregar una función que permita cambiar el estado de isExhibited de una obra específica enviándole el id
