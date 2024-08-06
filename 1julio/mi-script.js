@@ -77,9 +77,22 @@ const posicionObra = artGallery.findIndex(obra => obra.title == "Mona Lisa");
 
 
 
-
 // Ejercicio 8: añadir nuevas obras al array de artGallery
+// Push() añade elementos al final de un array y devuelve la nueva longitud del array.
 
-// Ejercicio 9: cambiar el estado de isExhibited de una obra enviándole el id
 
+
+// Ejercicio 9: Agregar una función que permita cambiar el estado de isExhibited de una obra
+//  enviándole el id
+// con find
+
+const cambiarEstadoIsExhibited = (id) => {
+  const obra = artGallery.find(obra => obra.id == 10);
+  if (obra.isExhibited = true) {
+    obra.isExhibited = false
+  
+  } 
+}
+
+console.log(cambiarEstadoIsExhibited)
 
