@@ -85,6 +85,7 @@ const posicionObra = artGallery.findIndex(obra => obra.title == "Mona Lisa");
 // Ejercicio 9: Agregar una función que permita cambiar el estado de isExhibited de una obra
 //  enviándole el id
 // con find
+console.log("///Ejercicio 9: cambiar estado de exhibición con el id");
 
 const cambiarEstadoIsExhibited = (id) => {
   const obra = artGallery.find(obra => obra.id == 10);
