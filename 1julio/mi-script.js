@@ -87,21 +87,60 @@ const posicionObra = artGallery.findIndex(obra => obra.title == "Mona Lisa");
 
 // Ejercicio 8: añadir nuevas obras al array de artGallery
 // Push() añade elementos al final de un array y devuelve la nueva longitud del array.
+console.log("\n\n Ejercicio 8: añadir nuevas obras al final del array");
+
+const fabulaDeAracne = {
+  id: 11,
+  artist: "Velázquez",
+  title: "La fábula de Aracne",
+  year: 1648,
+  isExhibited: false
+};
+
+const muchachaConGuantes = {
+  id: 12,
+  artist: "Tamara Lempicka",
+  title: "Muchacha con guantes",
+  year: 1930,
+  isExhibited: false
+};
+
+artGallery.push(fabulaDeAracne, muchachaConGuantes);
+console.log(artGallery)
 
 
 
 // Ejercicio 9: Agregar una función que permita cambiar el estado de isExhibited de una obra
 //  enviándole el id
 // con find
-console.log("\n\n Ejercicio 9: cambiar estado de exhibición con el id");
+/* Voy a cambiar el estado de FALSE A TRUE en la obra 9: Hopper - Nighthawks
+                         y de TRUE a FALSE en la obra 10: Vermeer - Girl with a Pearl Earring */
+console.log("\n\n Ejercicio 9: cambiar estado de exhibición de las obras 9 y 10 con su id");
+
+/**
+ * Cambia el estado de una obra de isExhibited de true a false o viceversa con el parámetro id
+ * @param {number} id 
+ */
 
 const cambiarEstadoIsExhibited = (id) => {
-  const obra = artGallery.find(obra => obra.id == 10);
-  if (obra.isExhibited = true) {
-    obra.isExhibited = false
-  
-  } 
+  // para encontrar obras específicas usamos find, y de cada obra específica tomamos el id
+  const obra = artGallery.find(obra => obra.id === id);
+  // si obra existe, cambiar el estado que tenga .isExhibited al alterno con ! la exclamación
+  if (obra) {
+    obra.isExhibited = !obra.isExhibited;} 
 }
 
-console.log(cambiarEstadoIsExhibited)
+// cambiar el estado de FALSE A TRUE en la obra 9: Hopper - Nighthawks
+cambiarEstadoIsExhibited(9);
+// cambiar el estado de TRUE A FALSE en la obra 10: Vermeer - Girl with a Pearl Earring
+cambiarEstadoIsExhibited(10);
+
+// filtramos solo las obras 9 y 10 para después mostrar esas únicamente en consola
+const mostrarNueveYDiez = artGallery.filter(obra => obra.id === 9 || obra.id === 10);
+
+
+/*  mostramos en consola solo nuestra selección de obras, 
+    pero podríamos el array completo con console.log(artGallery)     */
+console.log(mostrarNueveYDiez)
+
 
