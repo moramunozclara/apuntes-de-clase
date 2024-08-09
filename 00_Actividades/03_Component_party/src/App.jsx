@@ -21,7 +21,7 @@ function App() {
     <p></p>
   ];
 
-  const usuario1 = 
+  const usuario3 = 
     {nombre: "Clara", edad:"25", ocupacion:"alumna"}
   ;
 
@@ -31,7 +31,7 @@ function App() {
     <h1>React component party</h1>
     <TarjetaUsuario nombre="Tomi" edad="40" ocupacion="profe"/>
     <TarjetaUsuario nombre="Ceci" edad="32" ocupacion="alumna"/>
-    <TarjetaUsuario {...usuario1}/>
+    <TarjetaUsuario {...usuario3}/>
     <hr />
     <ListaTareas listaTareas={listaTareas}/>
     <hr />

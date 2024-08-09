@@ -1,16 +1,16 @@
 # Ejercicios React-Component-Party
 
-## Ejercicio 1: Setup + Tarjeta de Usuario
+## Ejercicio 1: Setup + Tarjeta de Usuario ✅
 
 - Crear un proyecto nuevo en Vite con React que se llame `react-component-party`
 - Crear un componente `TarjetaUsuario` que reciba props para mostrar información de un usuario (nombre, edad, ocupación).
 - Crea los estilos para este componente en un archivo CSS `App.css`
 - Importa el componente en nuestro archivo `App.js` y cargue 3 tarjetas con distintos valores de usuarios.
 
-## Ejercicio 2: Lista de Tareas
+## Ejercicio 2: Lista de Tareas ✅
 
 - Crear un componente `tareas/ListaTareas` que reciba un array de tareas para este verano como props.
-- Craar un segundo componente `tareas/Tarea` que reciba props para mostrar cada una de las tareas.
+- Crear un segundo componente `tareas/Tarea` que reciba props para mostrar cada una de las tareas.
 - Incluir nuestro componente ListaTareas en App.js y mostrarlas en pantallas.
 
 ```js
@@ -31,7 +31,7 @@
 - Atención, este objeto posee otro objeto anidado dentro, deconstruir como corresponde.
 
 ```js
-  // PerfilUsuario  (Objeto Anidado) 
+  // PerfilUsuario  (Objeto Anidado) ¡
   const userData =  {
     nombre: 'El Barto',
     email: 'elbarto@fox.com',
@@ -60,7 +60,7 @@
   ];
 ```
 
-## Ejercicio 5: Blog Post - Investigación de prop children
+## Ejercicio 5: Blog Post - Investigación de prop children
 
 - Crear un componente llamado `BlogPost` que reciba `título`, `fecha` y `autor` como props, pero que utilice el contenido del Post como children. 
 - Puedes buscar online que es el prop `children` de React, o ver este link con una explicación muy simplificada [wikiReact](https://www.reactjs.wiki/que-es-y-para-que-sirve-la-prop-children-en-react)
