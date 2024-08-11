@@ -22,15 +22,15 @@ function App() {
   ];
 
   const usuario3 = 
-    {nombre: "Clara", edad:"25", ocupacion:"alumna"}
+    {nombre: "Clara", edad:"25", ocupacion:"Alumna"}
   ;
 
   //imprimir en pantalla
   return (
     <>
     <h1>React component party</h1>
-    <TarjetaUsuario nombre="Tomi" edad="40" ocupacion="profe"/>
-    <TarjetaUsuario nombre="Ceci" edad="32" ocupacion="alumna"/>
+    <TarjetaUsuario nombre="Tomi" edad="40" ocupacion="Profe"/>
+    <TarjetaUsuario nombre="Ceci" edad="32" ocupacion="Alumna"/>
     <TarjetaUsuario {...usuario3}/>
     <hr />
     <ListaTareas listaTareas={listaTareas}/>

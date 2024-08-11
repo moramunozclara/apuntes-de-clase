@@ -10,11 +10,11 @@ const TarjetaUsuario = ( {edad, nombre, ocupacion} ) => {
     return (
         <div className="Card">
             <h3>Tarjeta usuario</h3>
-            {nombre}
-            <p></p>
-            {edad}             
-            <p></p>
-            {ocupacion}
+        
+            <p>Nombre: {nombre}</p>
+            <p>Edad: {edad}</p>
+            <p>Ocupación: {ocupacion}</p>
+            
         </div>
 )
  }
