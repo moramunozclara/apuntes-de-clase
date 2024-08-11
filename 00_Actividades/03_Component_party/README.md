@@ -31,7 +31,7 @@
 - Atención, este objeto posee otro objeto anidado dentro, deconstruir como corresponde.
 
 ```js
-  // PerfilUsuario  (Objeto Anidado) ¡
+  // PerfilUsuario  (Objeto Anidado) 
   const userData =  {
     nombre: 'El Barto',
     email: 'elbarto@fox.com',
@@ -47,13 +47,13 @@
 ## Ejercicio 4: Galería de imagenes
 
 - Crear un componente galería de imagenes con los datos dados a continuación.
-- Puede que no siempre tengamos un `key` como un id para nuestro map(), por lo podemos ustilizar (como última instancia) el atributo `index` que nos ofrece map() en su segundo parametro, como se indica a continuación:  
+- Puede que no siempre tengamos un `key` como un id para nuestro map(), por lo podemos utilizar (como última instancia) el atributo `index` que nos ofrece map() en su segundo parametro, como se indica a continuación:  
 `listaImagenes.map( (item, index) => { ..... })`
 
 ```js
   // GaleriaImagenes (Array de Objetos)
   // https://rickandmortyapi.com/
-  const iamgeList = [
+  const imageList = [
     { src: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg', alt: 'Rick Sanchez' },
     { src: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg', alt: 'Morty Smith' },
     { src: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg', alt: 'Summer Smith' },

@@ -2,10 +2,14 @@
 
   const PerfilUsuario = () => {
 
+    // indicamos las props / propiedades del objeto userData
     const userData =  {
         nombre: 'El Barto',
         email: 'elbarto@fox.com',
         img: "https://i.ebayimg.com/images/g/Z9oAAOSwH7NlKK4J/s-l1200.webp",
+
+        // dirección es el otro objeto anidado con más props dentro
+        // también hay que desestructurarlo después
         direccion: {
           calle: 'Calle Falsa 123',
           ciudad: 'Springfield',
@@ -13,11 +17,10 @@
         }
       };
 
-
+    // desestructurar: convertimos los props (userData , direccion) en variables
     const { nombre, email, img, direccion } = userData;
     const { calle, ciudad, codigoPostal } = direccion;
 
-  
 
     return (
 
