@@ -1,13 +1,14 @@
 
-const GaleriaImagenes = () => {
-
 // array de objetos
-const {src, alt} = imageList
+const GaleriaImagenes = ({imageList}) => {
+
 
     return ( 
         <div className="Card">
 
-            <img src={src} alt={`Imagen de ${alt}`}/>
+            {imageList.map ((item, index) => (
+                    <img key={index} src={item.src} alt={`Imagen de ${item.alt}`} title={`Imagen de ${item.alt}`}/>
+                ))}
         
         </div>
      );

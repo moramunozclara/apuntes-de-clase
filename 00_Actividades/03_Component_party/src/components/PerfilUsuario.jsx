@@ -29,7 +29,7 @@
             {/* renderizamos los props extraídos de userData, no userData directamente */}
             <h2>{nombre}</h2>
             <h3>{email}</h3>
-            <img src={img} alt={`Imagen de ${nombre}`} />
+            <img src={img} alt={`Imagen de ${nombre}`} title={`Imagen de ${nombre}`} />
 
             {/* renderizamos los props extraídos de Dirección, no dirección directamente */}
             <h3>Dirección</h3>

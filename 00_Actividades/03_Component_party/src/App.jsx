@@ -7,6 +7,7 @@ import TarjetaUsuario from './components/TarjetaUsuario'
 // 2º: Importar listaa de tareas
 import ListaTareas from './components/tareas/ListaTareas'
 
+
 // 3º: Importar perfil El Barto
 import PerfilUsuario from './components/PerfilUsuario';
 
@@ -22,7 +23,7 @@ function App() {
     { id: 3, nombreTarea: 'Mejorar mi nivel de Surf', isCompletada: false },
     { id: 4, nombreTarea: 'Aprender a cocinar', isCompletada: true },
     { id: 5, nombreTarea: 'Ver series', isCompletada: false },
-    <p></p>
+    
   ];
 
   const usuario3 = 
