@@ -14,6 +14,9 @@ import PerfilUsuario from './components/PerfilUsuario';
 // 4º: Importar galería de imágenes
 import GaleriaImagenes from './components/GaleriaImagenes';
 
+// 5º: Importar blog post con prop children
+import BlogPost from './components/BlogPost';
+
 function App() {
 
   // array de objetos (tareas)
@@ -36,6 +39,9 @@ function App() {
     { src: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg', alt: 'Morty Smith' },
     { src: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg', alt: 'Summer Smith' },
   ];
+
+
+
   
 
   //imprimir en pantalla
@@ -53,6 +59,11 @@ function App() {
     {/* 1er imageList: prop que traslado al componente. 
          2º imageList: llama a la constante en App definida arriba, que también podría llamarse imageData, por ejemplo  */}
     <GaleriaImagenes imageList={imageList}/>
+    <hr/>
+    <BlogPost titulo="Mi Primer Post" autor="Tomi" fecha="2024-07-01">
+      <p>Lorem ipsum dolor, adipisci unde tempora recusandae tenetur numquam reprehenderit id quaerat, iure magni consectetur alias neque amet, quisquam repudiandae? Saepe temporibus inventore ipsa! Praesentium!</p>
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    </BlogPost>
     </>
   )
 }
