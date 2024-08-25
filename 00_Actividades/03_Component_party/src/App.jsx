@@ -17,7 +17,10 @@ import GaleriaImagenes from './components/GaleriaImagenes';
 // 5º: Importar blog post con prop children
 import BlogPost from './components/BlogPost';
 
-import Restaurante from './components/Restaurante';
+import Restaurante from './components/restaurante/Restaurante';
+import MenuSection from './components/restaurante/MenuSection';
+
+
 
 function App() {
 

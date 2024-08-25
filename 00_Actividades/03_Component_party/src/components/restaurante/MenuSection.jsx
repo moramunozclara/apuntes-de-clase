@@ -1,4 +1,4 @@
-const Restaurante = ({menu}) => {
+const MenuSection = ({menu}) => {
 
     const {entrantes, principales, postres} = menu;
 
@@ -36,4 +36,4 @@ const Restaurante = ({menu}) => {
      );
 }
  
-export default Restaurante;
+export default MenuSection;
