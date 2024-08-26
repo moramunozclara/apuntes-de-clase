@@ -1,0 +1,31 @@
+.Card {
+    border: 1px solid gray;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px blue;
+  }
+  
+  
+  .CardEncendido {
+    border: 1px solid gray;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px blue;
+  
+    background-color: rgb(251, 251, 138);
+  }
+  
+  .CardApagado {
+    border: 1px solid gray;
+    padding: 16px;
+    margin: 16px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px blue;
+    
+    background-color: rgb(64, 73, 126);
+    color: white;
+  
+  }
+  
