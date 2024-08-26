@@ -6,8 +6,8 @@ const GaleriaImagenes = ({imageList}) => {
     return ( 
         <div className="Card">
 
-            {imageList.map ((item, index) => (
-                    <img key={index} src={item.src} alt={`Imagen de ${item.alt}`} title={`Imagen de ${item.alt}`}/>
+            {imageList.map (({src, alt}, index) => (
+                    <img key={index} src={src} alt={`Imagen de ${alt}`} title={`Imagen de ${alt}`}/>
                 ))}
         
         </div>

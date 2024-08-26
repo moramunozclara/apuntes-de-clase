@@ -17,10 +17,12 @@ import GaleriaImagenes from './components/GaleriaImagenes';
 // 5º: Importar blog post con prop children
 import BlogPost from './components/BlogPost';
 
+// Extra
 import Restaurante from './components/restaurante/Restaurante';
-
 import TiendaProductos from './components/TiendaProductos';
 import Comentarios from './components/Comentarios';
+import Testimonios from './components/Testimonios';
+import TarjetasRecetas from './components/TarjetasRecetas';
 
 function App() {
 
@@ -158,8 +160,84 @@ function App() {
   ];
 
 
+// json de Testimonios
+const testimonios = [
+  {
+    "id": 1,
+    "name": "Laura Sánchez",
+    "position": "Directora de Marketing",
+    "company": "TechCorp",
+    "testimonial": "El servicio al cliente es excepcional. Siempre están dispuestos a ayudar y resolver cualquier problema.",
+    "image": "https://example.com/laura-sanchez.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Pedro Gómez",
+    "position": "Desarrollador Senior",
+    "company": "WebSolutions",
+    "testimonial": "La plataforma es intuitiva y fácil de usar. Ha mejorado significativamente nuestra productividad.",
+    "image": "https://example.com/pedro-gomez.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Isabel Torres",
+    "position": "CEO",
+    "company": "InnovateNow",
+    "testimonial": "Gracias a este producto, hemos podido escalar nuestro negocio de manera eficiente y sostenible.",
+    "image": "https://example.com/isabel-torres.jpg"
+  }
+]
 
-  
+// json de Recetas
+const tarjetasRecetas = [
+  {
+    "id": 1,
+    "name": "Paella Valenciana",
+    "image": "https://example.com/paella.jpg",
+    "ingredients": [
+      "400g de arroz bomba",
+      "1 kg de pollo troceado",
+      "200g de judías verdes",
+      "200g de garrofó (judía blanca)",
+      "1 tomate rallado",
+      "Azafrán",
+      "Aceite de oliva",
+      "Sal",
+      "Agua"
+    ],
+    "instructions": [
+      "Sofríe el pollo en una paella con aceite de oliva.",
+      "Añade las judías verdes y el garrofó, y sofríe unos minutos más.",
+      "Incorpora el tomate rallado y cocina hasta que se evapore el agua.",
+      "Agrega el arroz y remueve para que se impregne bien.",
+      "Vierte el agua caliente (el doble que de arroz) y el azafrán.",
+      "Cocina a fuego fuerte durante 10 minutos y luego a fuego lento otros 8 minutos.",
+      "Deja reposar unos minutos antes de servir."
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Guacamole",
+    "image": "https://example.com/guacamole.jpg",
+    "ingredients": [
+      "3 aguacates maduros",
+      "1 tomate",
+      "1/2 cebolla",
+      "1 chile jalapeño (opcional)",
+      "Jugo de 1 limón",
+      "Cilantro fresco",
+      "Sal"
+    ],
+    "instructions": [
+      "Corta los aguacates por la mitad, retira el hueso y vacía la pulpa en un bol.",
+      "Machaca los aguacates con un tenedor hasta obtener una consistencia cremosa.",
+      "Pica finamente el tomate, la cebolla y el jalapeño (si lo usas) y añádelos al bol.",
+      "Agrega el jugo de limón, cilantro picado y sal al gusto.",
+      "Mezcla todos los ingredientes hasta que estén bien integrados.",
+      "Sirve inmediatamente con totopos o chips de maíz."
+    ]
+  }
+]; 
 
   //imprimir en pantalla
   return (
@@ -184,7 +262,8 @@ function App() {
     <Restaurante menu={restaurant.menu}></Restaurante>
     <TiendaProductos productos={productos}></TiendaProductos>
     <Comentarios comentarios={comentarios}></Comentarios>
-
+    <Testimonios testimonios={testimonios}></Testimonios>
+    <TarjetasRecetas tarjetasRecetas={tarjetasRecetas}></TarjetasRecetas>
     </>
   )
 }
