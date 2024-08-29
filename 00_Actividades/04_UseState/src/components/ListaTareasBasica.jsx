@@ -42,7 +42,9 @@ const ListaTareasBasica = () => {
 
                     <ul>
                         {tareas.map((tarea, index) => (
-                            <li key={index}>{tarea}</li>
+                            <li key={index}>{tarea} |
+                                {/* Eliminar tarea individual = Boton para filtrar/MOSTRAR "todas las tareas que no sean la actual"  */}
+                                <button onClick={() => {setTareas(tareas.filter((tareaActual, i) => i !== index))}}>Eliminar</button></li>
                         ))}
                         
                     </ul>

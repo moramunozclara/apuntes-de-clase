@@ -7,6 +7,8 @@ import InterruptorOnOff from './components/InterruptorOnOff'
 
 import ListaTareasBasica from './components/ListaTareasBasica'
 
+import FormularioRegistro from './components/FormularioRegistro'
+
 
 
 function App() {
@@ -17,6 +19,7 @@ function App() {
         <ContadorSimple></ContadorSimple>
         <InterruptorOnOff></InterruptorOnOff>
         <ListaTareasBasica></ListaTareasBasica>
+        <FormularioRegistro></FormularioRegistro>
 
 
     </>
