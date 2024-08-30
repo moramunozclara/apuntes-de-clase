@@ -2,12 +2,16 @@ import { useState } from "react";
 
 const FormularioRegistro = () => {
 
-    const [nombre, setNombre] = useState();
+    const [inputs, setInputs] = useState({nombre: "", correo: "" });
 
-    const [correo, setCorreo] = useState();
+    const handleChange = (e) => {
 
+        setInputs({
+            ...inputs,  // Copia todos los valores existentes
+            [e.target.name]: e.target.value // Actualiza solo el campo que cambió
+        });
 
-
+        console.log(e.target.name, ": ", e.target.value)};
 
 
     return ( 
@@ -20,9 +24,8 @@ const FormularioRegistro = () => {
                 name="nombre"
                 id="name"
                 type="text" 
-                value={nombre} 
-                onChange={(e) => {setNombre(e.target.value);
-                    console.log("Nombre:", e.target.value)}}
+                value={inputs.nombre} 
+                onChange={handleChange}
                 placeholder="Escriba su nombre"/>
 
                 <br />
@@ -30,9 +33,7 @@ const FormularioRegistro = () => {
                 <input id="email" 
                 name="correo"
                 type="email" 
-                value={correo} 
-                onChange={(e) => {setCorreo(e.target.value);
-                    console.log("Mail:", e.target.value)}} 
+                onChange={handleChange} 
                 placeholder="Escriba su correo electrónico" />
                 </form>
             </div></>
