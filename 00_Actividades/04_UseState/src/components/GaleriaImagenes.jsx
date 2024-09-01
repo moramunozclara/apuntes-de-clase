@@ -36,7 +36,17 @@ const GaleriaImagenes = ({imageList}) => {
 
 
                 <button
-                    onClick={() => setImagen(imagen - 1)}
+                    onClick={() => {
+                        if (imagen - 1 < 0) {
+                            // el length es de 3, mientras los indices son 0, 1, 2,
+                            //  por eso hay que restarle 1
+                            setImagen(imageList.length -1 )
+                            
+                        } else {
+                            setImagen(imagen - 1)
+                            
+                        }
+                    }}
                     >Anterior</button>
 
 

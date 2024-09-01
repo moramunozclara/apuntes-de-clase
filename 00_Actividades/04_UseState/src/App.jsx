@@ -11,6 +11,9 @@ import FormularioRegistro from './components/FormularioRegistro'
 
 import GaleriaImagenes from './components/GaleriaImagenes'
 
+import Temporizador from './components/Temporizador'
+
+
 
 
 
@@ -30,6 +33,8 @@ function App() {
         <ListaTareasBasica></ListaTareasBasica>
         <FormularioRegistro></FormularioRegistro>
         <GaleriaImagenes imageList={imageList}></GaleriaImagenes>
+        <Temporizador></Temporizador>
+
 
     </>
   )
