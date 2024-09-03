@@ -24,7 +24,7 @@ const Users = () => {
             DATA son los datos obtenidos de la respuesta en formato JSON,
             tiene todos los datos de la API
 
-            data.RESULTS contiene el ARRAY de EPISODIOS
+            data.RESULTS contiene el ARRAY de Users
         */
 
     }, []);
