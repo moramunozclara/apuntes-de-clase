@@ -9,21 +9,33 @@ import cors from 'cors';
 // importar mis posts y comments de prueba (incluir .js)
 import {publicaciones, comments, users, photos} from './data/mockData.js';
 
+//  importar rutas
+import indexRoutes from './routes/index.routes.js'
+
+
+// helpers /o/ utilities
 import {getLastId} from './utils/utils.js' ;
 
 
 const app = express();
 const PORT = 3000;
 
+// ---------------------------
+//        Middlewares
+// ---------------------------
 
 // CORS nos permite acceder a los recursos de este servidor,
-// desde otro servidor
+// DESDE OTRO servidor
 app.use(cors());
 
 // EXPRESS procesa el json body para leerlo con req.body();
 app.use(express.json());
 
+app.use("API/v1/", indexRoutes);
 
+// ---------------------------
+//        RUTAAS
+// ---------------------------
 
 //Rutas (1º la ruta, 2º la función)
 app.get("/", (req, res) => {
@@ -39,7 +51,8 @@ app.get("/", (req, res) => {
     
     // GET /publicaciones
     app.get("/publicaciones", (req, res) => {
-        res.json(publicaciones);
+        // STATUS 200 = SUCCESSFUL REQUEST
+        res.status(200).json(publicaciones);
     });
 
     // ----> GET /post/:id (obtener una publicacion específica) <-----------------------
@@ -48,7 +61,7 @@ app.get("/", (req, res) => {
         const post = publicaciones.find((publicacion) => publicacion.id === postId); // Buscar el post por id
 
         if (post) {
-            res.json(post);
+            res.status(200).json(post);
         } else {
             res.status(404).json({ message: "Publicación no encontrada" });
         }
@@ -93,7 +106,7 @@ app.get("/", (req, res) => {
                 
                 publicaciones.push(newPost);
 
-                res.json(newPost);
+                res.status(201).json(newPost);
             });
 
 

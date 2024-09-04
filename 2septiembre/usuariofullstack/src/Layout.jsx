@@ -1,4 +1,4 @@
-import {Outlet, Link} from 'react-router-dom';
+import {Outlet, Link, NavLink} from 'react-router-dom';
 
 function Layout() {
 
@@ -7,11 +7,11 @@ function Layout() {
     <header>
       <nav>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/users">Users</Link></li>
-          <li><Link to="/posts">Posts</Link></li>
-          <li><Link to="/photos">Photos</Link></li>
-          <li><Link to="/comments">Comments</Link></li>
+          <li><NavLink to="/">Home</NavLink></li>
+          <li><NavLink to="/users">Users</NavLink></li>
+          <li><NavLink to="/posts">Posts</NavLink></li>
+          <li><NavLink to="/photos">Photos</NavLink></li>
+          <li><NavLink to="/comments">Comments</NavLink></li>
 
         </ul>
       </nav>

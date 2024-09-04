@@ -2,7 +2,8 @@ import { createBrowserRouter } from 'react-router-dom'
 import Layout from '../../Layout'
 
 import Home from '../../pages/Home';
-import Posts from '../../pages/Posts';
+import AllPosts from '../../pages/AllPosts';
+import Post from '../../pages/Post';
 import Users from '../../pages/Users';
 import Photos from '../../pages/Photos';
 import Comments from '../../pages/Comments';
@@ -21,16 +22,20 @@ const router = createBrowserRouter([
                 element: <Home/>
             },
             {
+                path: 'posts', //los children van sin barra pq ya trae path
+                element: <AllPosts/>
+            },
+            {
+                path: 'posts/:id', 
+                element: <Post/>
+            },
+            {
                 path: 'comments', //los children van sin barra pq ya trae path
                 element: <Comments/>
             },
             {
                 path: 'photos', //los children van sin barra pq ya trae path
                 element: <Photos/>
-            },
-            {
-                path: 'posts', //los children van sin barra pq ya trae path
-                element: <Posts/>
             },
             {
                 path: 'users', //los children van sin barra pq ya trae path

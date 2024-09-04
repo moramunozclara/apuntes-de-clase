@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 
 
-const Posts = () => {
+const AllPosts = () => {
 
     const [posts, setPosts] = useState([]);
 
@@ -38,4 +39,4 @@ const Posts = () => {
      );
 }
  
-export default Posts;
+export default AllPosts;
