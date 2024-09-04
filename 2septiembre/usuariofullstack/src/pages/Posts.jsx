@@ -6,12 +6,15 @@ const Posts = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts')
+        // fetch('https://jsonplaceholder.typicode.com/posts')
+        fetch('http://localhost:3000/publicaciones')
 
-        .then( response => response.json)
+        
+
+        .then( response => response.json())
         .then( data => {
             setPosts(data) //corregir
-        }
+            }
         )
 
         
@@ -21,18 +24,16 @@ const Posts = () => {
         <>
         
         <h3>Posts</h3>
-        {posts.map((
-            {userId, id, title, body}
-        ))}
-
         <ul>
-            <li key={id}>
-                <p>{title}</p>
-            </li>
-        </ul>
-        
-        </>
+            {posts.map(( { postId, id, title, body} ) => (
+                <li key={id}>
+                    <p>{title}</p>
+                    <p>{body}</p>
 
+                </li>
+            ))}
+        </ul>    
+        </>
 
      );
 }

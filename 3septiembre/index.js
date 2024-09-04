@@ -7,7 +7,7 @@ import express from 'express';
 import cors from 'cors';
 
 // importar mis posts y comments de prueba (incluir .js)
-import {publicaciones, comments} from './data/mockData.js';
+import {publicaciones, comments, users, photos} from './data/mockData.js';
 
 import {getLastId} from './utils/utils.js' ;
 
@@ -41,6 +41,34 @@ app.get("/", (req, res) => {
     app.get("/publicaciones", (req, res) => {
         res.json(publicaciones);
     });
+
+    // ----> GET /post/:id (obtener una publicacion específica) <-----------------------
+    app.get("/publicaciones/:id", (req, res) => {
+        const postId = parseInt(req.params.id, 10); // Obtener el id de los parámetros de la URL
+        const post = publicaciones.find((publicacion) => publicacion.id === postId); // Buscar el post por id
+
+        if (post) {
+            res.json(post);
+        } else {
+            res.status(404).json({ message: "Publicación no encontrada" });
+        }
+    });
+
+    //  ---->GET /post/:id/comments (obtener comentarios de una publicacion específica)
+        app.get("/publicaciones/:id/comments", (req, res) => {
+            const postId = parseInt(req.params.id, 10); // Obtener el id de los parámetros de la URL
+            const postComments = comments.filter((comentario) => comentario.postId === postId); // Filtrar comentarios por postId
+
+            if (postComments.length > 0) {
+                res.json(postComments);
+            } else {
+                res.status(404).json({ message: "Todavía no hay comentarios" });
+            }
+        });
+
+
+
+
     // POST /publicaciones (agregar nuevo post a nuestra base de datos)
     app.post("/publicaciones", 
         // () => {} funcion flecha
@@ -92,6 +120,58 @@ app.get("/", (req, res) => {
         comments.push(newComment);
 
         res.json(newComment);
+    } )
+
+
+// /photos________________________________________________________
+    
+    // GET /photos
+    app.get("/photos", (req, res) => {
+        res.json(photos);
+    });
+
+    // POST /photos
+    app.post("/photos", (req, res) => {
+
+        const lastId = getLastId(photos);
+
+        const newPhoto = {
+            id: lastId + 1,
+            albumId: 1,
+            title: req.body.titulo,
+            // url: "",
+            // thumbnailUrl: "https://via.placeholder.com/150/92c952"
+
+        };
+
+        photos.push(newPhoto);
+
+        res.json(newPhoto);
+    } )
+
+
+// /users________________________________________________________
+    
+    // GET /users
+    app.get("/users", (req, res) => {
+        res.json(users);
+    });
+
+    // POST /users
+    app.post("/users", (req, res) => {
+
+        const lastId = getLastId(users);
+
+        const newUser = {
+            id: lastId + 1,
+            name: req.body.nombre,
+            username:  req.body.usuario,
+            email: req.body.correo
+        };
+
+        users.push(newUser);
+
+        res.json(newUser);
     } )
 
 

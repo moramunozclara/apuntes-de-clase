@@ -7,7 +7,9 @@ const Users = () => {
     // Llamar a la API con useEffect
     useEffect(() => {
         // efecto secundario
-        fetch('https://jsonplaceholder.typicode.com/users')
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        fetch('http://localhost:3000/users')
+
 
         // convierte la respuesta HTTP en formato JSON
         .then(response => response.json())
