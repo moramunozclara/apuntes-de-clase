@@ -8,7 +8,7 @@ const Users = () => {
     useEffect(() => {
         // efecto secundario
         // fetch('https://jsonplaceholder.typicode.com/users')
-        fetch('http://localhost:3000/users')
+        fetch('http://localhost:3000/API/v1/users')
 
 
         // convierte la respuesta HTTP en formato JSON

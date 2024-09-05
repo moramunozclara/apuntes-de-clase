@@ -8,7 +8,7 @@ const AllPosts = () => {
 
     useEffect(() => {
         // fetch('https://jsonplaceholder.typicode.com/posts')
-        fetch('http://localhost:3000/publicaciones')
+        fetch('http://localhost:3000/API/v1/publicaciones')
 
         
 

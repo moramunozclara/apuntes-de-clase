@@ -9,7 +9,7 @@ const Photos = () => {
     useEffect(() => {
 
         // fetch('https://jsonplaceholder.typicode.com/photos')
-        fetch('http://localhost:3000/photos')
+        fetch('http://localhost:3000/API/v1/photos')
 
 
         .then(response => response.json())
@@ -21,6 +21,7 @@ const Photos = () => {
     
     return ( 
         <>
+        <h3>Fotos</h3>
         <ul>{photos.map(({albumId, id, title, url, thumbnailUrl}) => (
             <li key={id}>
                 <img src={url} alt="Photo" title={title} />
