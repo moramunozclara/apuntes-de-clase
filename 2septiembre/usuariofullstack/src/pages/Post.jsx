@@ -10,7 +10,7 @@ const Post = () => {
 
     useEffect(() => {
         // fetch('https://jsonplaceholder.typicode.com/posts')
-        fetch(`http://localhost:3000/publicaciones/${id}`)
+        fetch(`http://localhost:3000/API/v1/publicaciones/${id}`)
 
         .then( response => response.json())
         .then( data => {

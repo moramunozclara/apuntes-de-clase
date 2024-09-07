@@ -9,7 +9,7 @@ const Comments = () => {
     useEffect(() => {
 
         // fetch('https://jsonplaceholder.typicode.com/comments')
-        fetch('http://localhost:3000/comments')
+        fetch('http://localhost:3000/API/v1/comments')
 
 
         .then(response => response.json())
@@ -21,6 +21,8 @@ const Comments = () => {
 
     return ( 
         <>
+                <h3>Comentarios</h3>
+
         
         <ul>{comments.map(({postId, id, name, email, body}) => (
             <li key={id}>
