@@ -34,7 +34,7 @@ app.use(express.json());
 app.use("API/v1/", indexRoutes);
 
 // ---------------------------
-//        RUTAAS
+//          RUTAS
 // ---------------------------
 
 //Rutas (1º la ruta, 2º la función)
