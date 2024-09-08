@@ -26,15 +26,9 @@ import {getAllPosts, newPost} from '../controllers/posts.controller.js';
 
 
 
-
-
-
-
 // ---------------------------       
 //        RUTAS (API/v1)
 // ---------------------------
-
-
 
 // /posts________________________________________________________
     
@@ -43,29 +37,52 @@ import {getAllPosts, newPost} from '../controllers/posts.controller.js';
 
     // ----> GET /post/:id (obtener una publicacion específica) <-----------------------
     router.get("/publicaciones/:id", (req, res) => {
-        const postId = parseInt(req.params.id, 10); // Obtener el id de los parámetros de la URL
-        const post = publicaciones.find((publicacion) => publicacion.id === postId); // Buscar el post por id
 
-        if (post) {
-            res.status(200).json(post);
-        } else {
-            res.status(404).json({ message: "Publicación no encontrada" });
+        // Obtener el id de los parámetros de la URL
+        // const postId = parseInt(req.params.id, 10); 
+        // Buscar el post por id
+        // const post = publicaciones.find((publicacion) => publicacion.id === postId); 
+
+        const {id} = req.params;
+
+        const post = publicaciones.find( post => post.id === parseInt(id));
+
+        const comentarios = comments.filter ( comment => comment.postId === parseInt(id));
+
+        // Añadir el array de comments como prop a post
+        post.comments = comentarios;
+
+        if (!post) {
+            return res.status(404).json({ message: "Publicación no encontrada" });
         }
+        res.status(200).json(post);
+
+
+        // console.log(post.comments)
+
+        // Comprobación
+        // if (post) {
+        //     res.status(200).json(post);
+        // } else {
+        //     res.status(404).json({ message: "Publicación no encontrada" });
+        // }
+
+
+
+
     });
 
     //  ---->GET /post/:id/comments (obtener comentarios de una publicacion específica)
-        router.get("/publicaciones/:id/comments", (req, res) => {
-            const postId = parseInt(req.params.id, 10); // Obtener el id de los parámetros de la URL
-            const postComments = comments.filter((comentario) => comentario.postId === postId); // Filtrar comentarios por postId
+        // router.get("/publicaciones/:id/comments", (req, res) => {
+        //     const postId = parseInt(req.params.id, 10); // Obtener el id de los parámetros de la URL
+        //     const postComments = comments.filter((comentario) => comentario.postId === postId); // Filtrar comentarios por postId
 
-            if (postComments.length > 0) {
-                res.json(postComments);
-            } else {
-                res.status(404).json({ message: "Todavía no hay comentarios" });
-            }
-        });
-
-
+        //     if (postComments.length > 0) {
+        //         res.json(postComments);
+        //     } else {
+        //         res.status(404).json({ message: "Todavía no hay comentarios" });
+        //     }
+        // });
 
 
     // POST /publicaciones (agregar nuevo post a nuestra base de datos)

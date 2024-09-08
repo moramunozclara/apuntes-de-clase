@@ -7,7 +7,6 @@ import express from 'express';
 import cors from 'cors';
 
 
-
 //  importar rutas
 import indexRoutes from './routes/index.routes.js'
 
@@ -41,9 +40,17 @@ app.get("/", (req, res) => {
     const landingHTML = `
                         <h1>Bienvenidos a nuestra REST-API</h1>
                         <h2>Mi backend es: <strong>${URL}:${PORT} </h2>
+                        <ul>
+                            <li><a href= "${URL}:${PORT}/api/v1/publicaciones">Publicaciones</a></li>
+                            <li><a href= "${URL}:${PORT}/api/v1/comments">Comentarios</a></li>
+                            <li><a href= "${URL}:${PORT}/api/v1/users">Usuarios</a></li>
+                            <li><a href= "${URL}:${PORT}/api/v1/photos">Fotos</a></li>
+                        </ul>
                         `;
     res.send(landingHTML);
 });
+
+
 
 app.use("/API/v1/", indexRoutes);
 

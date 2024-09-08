@@ -28,8 +28,11 @@ const AllPosts = () => {
         <ul>
             {posts.map(( { postId, id, title, body} ) => (
                 <li key={id}>
-                    <p>{title}</p>
-                    <p>{body}</p>
+                    <Link to={`/posts/${id}`}>
+                        <p>{title}</p>
+                        <p>{body}</p>
+                    </Link>
+
 
                 </li>
             ))}

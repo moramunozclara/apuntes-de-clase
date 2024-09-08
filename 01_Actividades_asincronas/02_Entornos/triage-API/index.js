@@ -2,8 +2,7 @@
 import express from 'express';
 import cors from 'cors';
 
-// importar data del json (incluir .js)
-import { } from './data/mockData.js';
+
 
 // importar rutas
 import indexRoutes from './routes/index.routes.js';

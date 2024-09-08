@@ -1,30 +1,19 @@
-import { useState, useEffect } from "react";
+const Comment = ({ name, email, body }) => {
 
-
-const Comments = () => {
-
-
-    const [comments, setComments] = useState([]);
-
-    useEffect(() => {
-
-        // fetch('https://jsonplaceholder.typicode.com/comments')
-        fetch('http://localhost:3000/API/v1/comments')
-
-
-        .then(response => response.json())
-        .then( data => {
-            setComments(data)
-        })
-        
-    }, []);
 
     return ( 
         <>
-        
-        <p>Soy un comentario</p></>
+
+        <div className="Card">
+            <h3>*Soy un comentario*</h3>
+            <p>{name}</p>
+            <p>{email}</p>
+            <p>{body}</p>
+        </div>
+
+        </>
         
      );
 }
  
-export default Comments;
+export default Comment;
