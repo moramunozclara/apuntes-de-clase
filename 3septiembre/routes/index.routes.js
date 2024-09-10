@@ -10,6 +10,7 @@ import {getLastId} from '../utils/utils.js' ;
 const router = Router();
 
 import {getAllPosts, newPost} from '../controllers/posts.controller.js';
+// FALTAN CONTROLLERS!!!
 
 
 // STATUS más utilizados

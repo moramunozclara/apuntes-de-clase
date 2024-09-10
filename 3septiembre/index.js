@@ -5,6 +5,7 @@
 // VERSIÓN ES MODULES
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
 
 
 //  importar rutas
@@ -13,6 +14,7 @@ import indexRoutes from './routes/index.routes.js'
 //   importo variables de configuración
 
 import {URL, PORT} from './config/config.js'
+
 
 const app = express();
 

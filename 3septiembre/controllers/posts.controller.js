@@ -11,10 +11,6 @@ const responseAPI = {
     status: "ok" 
 }
 
-
-
-
-
    // GET /publicaciones
     export const getAllPosts = (req, res) => {
 
