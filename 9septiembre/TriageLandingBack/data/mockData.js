@@ -1,6 +1,6 @@
 // Aquí puedes agregar tus datos simulados
 
-export const landingPage = 
+export const hero = 
         {
             isVisible: true,
             img: "hero.png.png",
