@@ -9,7 +9,8 @@ lerna-debug.log*
 
 # Environment variables / Variables de entorno
 .env
-.env.*
+.env.production
+.env.development
 
 # Dependency directories
 node_modules

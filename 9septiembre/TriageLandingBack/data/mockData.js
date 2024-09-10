@@ -48,4 +48,18 @@ export const sections = [
         content: "Send a quick reply without leaving the app.",
         isImgRight: true
     }
+
+    
+]
+
+ export const features = [ 
+    {
+
+    }
+]
+
+export const praise = [ 
+    {
+
+    }
 ]

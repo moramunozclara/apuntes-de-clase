@@ -17,7 +17,7 @@ const getData = () => {
       // efecto secundario
       // fetch('https://jsonplaceholder.typicode.com/users')
       // fetch('http://localhost:3000/API/v1/users')
-        fetch(VITE_BACKEND)
+        fetch(`${VITE_BACKEND}/API/v1/users`)
 
       // convierte la respuesta HTTP en formato JSON
       .then(response => response.json())

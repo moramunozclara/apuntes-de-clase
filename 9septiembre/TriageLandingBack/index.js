@@ -5,16 +5,12 @@ import cors from 'cors';
 // Importar configuración desde config.js
 import { PORT, URL } from './config/config.js';
 
-// Importar variables de entorno
-import dotenv from 'dotenv';
-dotenv.config();
-
 
 // importar rutas
 import indexRoutes from './routes/index.routes.js';
 
 // helpers /o/ utilities
-import { getBoolean } from './utils/utils.js';
+import { getBoolean, getLastId } from './utils/utils.js';
 
 const app = express();
 
@@ -24,18 +20,9 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// ---------------------------
-//     Ruta base de la URL
-// ---------------------------
-app.use("/API/v1/", indexRoutes);
+// Publica la carpeta Public
+app.use(express.static('public'));
 
-
-
-
-// Aviso en consola
-app.listen(PORT, () => {
-  console.log(`Servidor iniciado en ${URL}:${PORT}`);
-});
 
 // ---------------------------
 //          RUTAS
@@ -57,4 +44,15 @@ app.get("/", (req, res) => {
                       </h2>
                       `;
   res.send(landingHTML);
+});
+
+// ---------------------------
+//     Ruta base de la URL
+// ---------------------------
+app.use("/API/v1/", indexRoutes);
+
+
+// Aviso en consola
+app.listen(PORT, () => {
+  console.log(`Servidor iniciado en ${URL}:${PORT}`);
 });
