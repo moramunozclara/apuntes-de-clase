@@ -5,6 +5,11 @@ const router = Router();
 import {hero, sections} from '../data/mockData.js';
 
 import {getHero} from '../controllers/hero.controller.js';
+import {getSections} from '../controllers/sections.controller.js';
+import {getFeatures} from '../controllers/features.controller.js';
+import {getPraise} from '../controllers/praise.controller.js';
+
+
 
 // ---------------------------       
 //  RUTAS a los controllers (API/v1)
@@ -14,6 +19,12 @@ import {getHero} from '../controllers/hero.controller.js';
     
     // GET /hero
     router.get("/hero", getHero );
+
+    router.get("/sections", getSections );
+
+    router.get("/features", getFeatures );
+
+    router.get("/praise", getPraise );
 
 
     // POST /hero (agregar nuevo hero nuestra base de datos ???????)

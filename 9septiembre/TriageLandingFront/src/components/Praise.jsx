@@ -1,6 +1,6 @@
 const Praise = () => {
     return ( 
-        <></>
+        <>Praise</>
      );
 }
  

@@ -48,8 +48,7 @@ export const sections = [
         content: "Send a quick reply without leaving the app.",
         isImgRight: true
     }
-
-    
+  
 ]
 
  export const features = [ 
@@ -60,6 +59,10 @@ export const sections = [
 
 export const praise = [ 
     {
-
+        isVisible: true,
+        icon: "svg-3.png",
+        color: "7000FF",
+        title: "Reply in context",
+        content: "Send a quick reply without leaving the app."
     }
 ]

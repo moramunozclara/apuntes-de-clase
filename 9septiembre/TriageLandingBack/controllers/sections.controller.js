@@ -1,5 +1,5 @@
 // Define tus rutas aquí, importar mis exportaciones de mockdata (incluir .js)
-import {hero} from '../data/mockData.js';
+import {sections} from '../data/mockData.js';
 
 import {getLastId} from '../utils/utils.js' ;
    
@@ -11,19 +11,19 @@ const responseAPI = {
     status: "ok" 
 }
 
-   // GET /hero
-    export const getHero = (req, res) => {
+   // GET /sections
+    export const getSections = (req, res) => {
 
 
         try {
 
-            const statusCode = hero.length ? 200 : 204;
+            const statusCode = sections.length ? 200 : 204;
             
         } catch (error) {
             
         }
         // STATUS 200 = SUCCESSFUL REQUEST
-        res.status(200).json(hero);
+        res.status(200).json(sections);
     };
 
     

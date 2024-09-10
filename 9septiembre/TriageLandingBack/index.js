@@ -5,7 +5,6 @@ import cors from 'cors';
 // Importar configuración desde config.js
 import { PORT, URL } from './config/config.js';
 
-
 // importar rutas
 import indexRoutes from './routes/index.routes.js';
 
@@ -20,12 +19,13 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Publica la carpeta Public
+
+// Hacer pública la carpeta Public
 app.use(express.static('public'));
 
 
 // ---------------------------
-//          RUTAS
+//    DISEÑO LANDING HTML
 // ---------------------------
 
 app.get("/", (req, res) => {
@@ -47,7 +47,7 @@ app.get("/", (req, res) => {
 });
 
 // ---------------------------
-//     Ruta base de la URL
+//     Ruta BASE de la URL
 // ---------------------------
 app.use("/API/v1/", indexRoutes);
 

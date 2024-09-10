@@ -1,4 +1,6 @@
 import {Outlet, Link, NavLink} from 'react-router-dom';
+import { useState, useEffect } from 'react'; // Importar useState y useEffect desde react
+
 
 import Hero from './components/Hero';
 import Section from './components/Section';
@@ -11,43 +13,61 @@ const VITE_BACKEND = import.meta.env.VITE_BACKEND;
 
 function Layout() {
 
-const [data, setData] = useState([]);
+    const [heroData, setHeroData] = useState(null);
+    const [sectionsData, setSectionsData] = useState([]);
 
-const getData = () => {
-      // efecto secundario
-      // fetch('https://jsonplaceholder.typicode.com/users')
-      // fetch('http://localhost:3000/API/v1/users')
-        fetch(`${VITE_BACKEND}/API/v1/users`)
+      
+    const getHeroData = () => {
+      fetch(`${VITE_BACKEND}/API/v1/hero`)
 
-      // convierte la respuesta HTTP en formato JSON
-      .then(response => response.json())
+        .then((response) => response.json())
 
-      //toma los datos JSON y actualiza el estado "users"
-      // con los resultados.
-      .then(data => {
-          console.log("Los datos de la API son: ", data)
-          setData(data)
-          }
-      )
+        .then((data) => {
+          console.log("Los datos de la API para hero son: ", data);
+          setHeroData(data);  // Actualiza el estado de heroData
+        })
 
-      /* 
-          DATA son los datos obtenidos de la respuesta en formato JSON,
-          tiene todos los datos de la API
+        .catch((error) => console.error("Error al obtener los datos:", error));
+    };
 
-          data.RESULTS contiene el ARRAY de la API
-      */
+    const getSectionsData = () => {
+      fetch(`${VITE_BACKEND}/API/v1/sections`)
 
-  };
+        .then((response) => response.json())
+
+        .then((data) => {
+          console.log("Los datos de la API para Sections son: ", data);
+          setSectionsData(data);  // Actualiza el estado de SectionsData
+        })
+
+        .catch((error) => console.error("Error al obtener los datos:", error));
+    };
+
+    useEffect(() => {
+      getHeroData();
+      getSectionsData();
+      
+    }, []);
+
+
+
 
   return (
     <>
-    
-    <p>ALGO</p>
-    <Hero hero={hero}></Hero>
+
+      <div className="Card">
+      <h1>HERO</h1>
+      { heroData && <Hero heroData={heroData} />}
+      </div>
+
+      <div className="Card">
+      <h1>SECTIONS</h1>
+      { sectionsData &&  sectionsData.length > 0 && sectionsData.map((section, index) => (<Section key={index} section={section}/>) ) }
+      </div>
 
 
     </>
   )
-}
+  }
 
-export default Layout
+export default Layout;
