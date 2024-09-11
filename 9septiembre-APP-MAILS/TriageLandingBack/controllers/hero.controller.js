@@ -14,16 +14,20 @@ const responseAPI = {
    // GET /hero
     export const getHero = (req, res) => {
 
-
         try {
 
             const statusCode = hero.length ? 200 : 204;
-            
+            responseAPI.data=hero;
+            res.status(statusCode)
+
         } catch (error) {
+            responseAPI.status="ERROR";
+            res.status(404)
             
         }
         // STATUS 200 = SUCCESSFUL REQUEST
-        res.status(200).json(hero);
+        res.json(responseAPI);
+
     };
 
     
