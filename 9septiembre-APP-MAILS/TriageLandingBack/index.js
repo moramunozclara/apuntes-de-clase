@@ -40,6 +40,8 @@ app.get("/", (req, res) => {
                             <li><a href= "${URL}:${PORT}/api/v1/sections">Sections</a></li>
                             <li> Falta <a href= "${URL}:${PORT}/api/v1/features">features</a></li>
                             <li>Falta <a href= "${URL}:${PORT}/api/v1/praise">praise</a></li>
+                            <li><a href= "${URL}:${PORT}/api/v1/inbox">inbox</a></li>
+
                         </ul>
                       </h2>
                       `;
