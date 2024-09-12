@@ -6,6 +6,8 @@ import Hero from './components/Hero';
 import Section from './components/Section';
 import Features from './components/Features';
 import Praise from './components/Praise';
+import RedactarCorreo from './components/RedactarCorreo';
+
 
 import './css/App.css';
 
@@ -43,9 +45,24 @@ function Layout() {
         .catch((error) => console.error("Error al obtener los datos:", error));
     };
 
+    const getInboxData = () => {
+      fetch(`${VITE_BACKEND}/API/v1/inbox`)
+
+        .then((response) => response.json())
+
+        .then((data) => {
+          console.log("Los datos de la API para Inbox son: ", data);
+          setInboxData(data);  // Actualiza el estado de InboxData
+        })
+
+        .catch((error) => console.error("Error al obtener los datos:", error));
+    };
+
     useEffect(() => {
       getHeroData();
       getSectionsData();
+      getInboxData();
+
       
     }, []);
 
@@ -65,6 +82,10 @@ function Layout() {
       { sectionsData &&  sectionsData.length > 0 && sectionsData.map((section, index) => (<Section key={index} section={section}/>) ) }
       </div>
 
+      <div className="Card">
+      <h1>Nuevo correo</h1>
+      <RedactarCorreo/>
+      </div>
 
     </>
   )
