@@ -18,12 +18,27 @@ const responseAPI = {
         try {
 
             const statusCode = features.length ? 200 : 204;
-            
-        } catch (error) {
-            
+ 
+            // STATUS 200 = SUCCESSFUL REQUEST
+            res.status(200).json(features);
+
+        } 
+        
+        catch (error) {
+            next (error);
         }
-        // STATUS 200 = SUCCESSFUL REQUEST
-        res.status(200).json(features);
+
     };
+
+        app.use((err, req, res, next) => {
+            
+            console.error('Error en la API', err)
+
+            res.status(500).json({
+              status: "error",
+              msg: "Error en la API",
+              error: err.message
+            });
+          });
 
     
