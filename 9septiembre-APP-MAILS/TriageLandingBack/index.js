@@ -54,6 +54,19 @@ app.get("/", (req, res) => {
 app.use("/API/v1/", indexRoutes);
 
 
+// ---------------------------
+//   Middleware de Manejo de Errores
+// ---------------------------
+app.use((err, req, res, next) => {
+  console.error('Error en la API:', err);  // Para depuración
+  res.status(500).json({
+    status: "error",
+    msg: "Error en la API",
+    error: err.message
+  });
+});
+
+
 // Aviso en consola
 app.listen(PORT, () => {
   console.log(`Servidor iniciado en ${URL}:${PORT}`);

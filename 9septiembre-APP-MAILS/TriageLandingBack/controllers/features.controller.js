@@ -27,18 +27,5 @@ const responseAPI = {
         catch (error) {
             next (error);
         }
-
     };
-
-        app.use((err, req, res, next) => {
-            
-            console.error('Error en la API', err)
-
-            res.status(500).json({
-              status: "error",
-              msg: "Error en la API",
-              error: err.message
-            });
-          });
-
     
