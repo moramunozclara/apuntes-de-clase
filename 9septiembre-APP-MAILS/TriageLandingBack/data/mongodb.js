@@ -33,9 +33,10 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-    address: addressSchema;
-    const addressSchema = new mongoose.Schema();
+    address: addressSchema
 });
+
+const addressSchema = new mongoose.Schema();
 
 // crear nuestros modelos 
 

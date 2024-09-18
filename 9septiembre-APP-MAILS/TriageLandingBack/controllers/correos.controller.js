@@ -1,9 +1,8 @@
 import {inbox} from '../data/mockData.js';
 
-import mysqldb from '../data/mysqldb.js';
+// import mysqldb from '../data/mysqldb.js';
 
 export const getAllCorreos = async (req, res) => {
-
 
     try {    
         const query = 'SELECT * FROM inbox ';
@@ -22,5 +21,4 @@ export const getAllCorreos = async (req, res) => {
         }
 }
 
-
-export default mysqldb
+// export default mysqldb
