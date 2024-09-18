@@ -7,6 +7,9 @@ import { PORT, URL } from './config/config.js';
 
 // importar rutas
 import indexRoutes from './routes/index.routes.js';
+import mongoRoutes from './routes/index.routes.js';
+
+
 
 // helpers /o/ utilities
 import { getBoolean, getLastId } from './utils/utils.js';
@@ -52,6 +55,7 @@ app.get("/", (req, res) => {
 //     Ruta BASE de la URL
 // ---------------------------
 app.use("/API/v1/", indexRoutes);
+app.use("/API/v1/mongo", mongoRoutes);
 
 
 // ---------------------------

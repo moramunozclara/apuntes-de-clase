@@ -17,3 +17,9 @@ export const mysqlConfig = {
     database: process.env.DB_NAME || "db_tuBaseDeDatos"
 
 }
+// configuación MongoDB
+export const mongodbUri = process.env.MONGODB_URI;
+
+
+import mongoose from "mongoose";
+
