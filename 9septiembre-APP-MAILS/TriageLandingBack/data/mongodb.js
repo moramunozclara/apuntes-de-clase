@@ -41,11 +41,11 @@ const userSchema = new mongoose.Schema({
 // crear nuestros modelos 
 
  const emailSchema = new mongoose.Schema({
-   remitente_id: {
-        type: Number,
+   remitente: {
+        type: mongoose.Schema.Types.ObjectId,
         required: true },
-    destinatario_id: {
-        type: Number,
+    destinatario: {
+        type: mongoose.Schema.Types.ObjectId,
         required: true},
     asunto: {
         type: String,
@@ -55,15 +55,19 @@ const userSchema = new mongoose.Schema({
     isLeido: {
         type: Boolean,
         default: false},
-    createdAt: {
-        type: Date,
-        default: Date.now}
+    // createdAt: {
+    //     type: Date,
+    //     default: null
+    
 },
-// opciones
-// timestamps: agrega createdAt y updatedAt. (deletedAt no)
-{ timestamps: true
+{ timestamps: true,
+    strict:false
+})
 
-});
+// opciones
+// timestamps: true -  agrega createdAt y updatedAt. (deletedAt no)
+// strict:false - me permite usar campos adicionales
+
 
 
 const User = mongoose.model('User', userSchema);
