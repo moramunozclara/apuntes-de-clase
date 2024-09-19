@@ -7,8 +7,7 @@ import { PORT, URL } from './config/config.js';
 
 // importar rutas
 import indexRoutes from './routes/index.routes.js';
-import mongoRoutes from './routes/index.routes.js';
-
+import mongoRoutes from './routes/mongodb.routes.js';
 
 
 // helpers /o/ utilities
@@ -21,7 +20,7 @@ const app = express();
 // ---------------------------
 app.use(cors());
 app.use(express.json());
-
+app.use(express.urlencoded({extended:true}));
 
 // Hacer pública la carpeta Public
 app.use(express.static('public'));
@@ -56,6 +55,10 @@ app.get("/", (req, res) => {
 // ---------------------------
 app.use("/API/v1/", indexRoutes);
 app.use("/API/v1/mongo", mongoRoutes);
+
+// rutas con mongodb
+app.use("/API/v1/", mongoRoutes);
+
 
 
 // ---------------------------

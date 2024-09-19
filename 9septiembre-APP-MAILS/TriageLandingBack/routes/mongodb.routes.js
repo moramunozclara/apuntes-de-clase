@@ -19,7 +19,4 @@ router.delete('/correos/:id', deleteEmail);
 
 router.patch('/correos/:id', updateEmail) //marcar como leído
 
-
-
-
 export default router;

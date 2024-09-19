@@ -18,6 +18,7 @@ const connectDB =  async () => {
 
 
 // crear nuestro esqema
+const addressSchema = new mongoose.Schema();
 
 const userSchema = new mongoose.Schema({
     // username:String,
@@ -36,7 +37,6 @@ const userSchema = new mongoose.Schema({
     address: addressSchema
 });
 
-const addressSchema = new mongoose.Schema();
 
 // crear nuestros modelos 
 
@@ -51,17 +51,24 @@ const addressSchema = new mongoose.Schema();
         type: String,
         required: true},
     contenido: {
-        type: String,
-        required: true},
+        type: String},
     isLeido: {
-        type: Boolean},
+        type: Boolean,
+        default: false},
     createdAt: {
         type: Date,
-        required: true}
+        default: Date.now}
+},
+// opciones
+// timestamps: agrega createdAt y updatedAt. (deletedAt no)
+{ timestamps: true
+
 });
 
 
 const User = mongoose.model('User', userSchema);
+const Email = mongoose.model('Email', emailSchema);
+
 // esto creará la colección de users si no existen, pero en minusculas y plural
 
 export {connectDB, User, Email}
