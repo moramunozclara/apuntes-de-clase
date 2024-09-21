@@ -1,10 +1,7 @@
-import { useState, useEffect } from 'react';
-import '../css/Pokeapi.css';
+import { useState, useEffect } from 'react'
+import '../css/Pokeapi.css'
 
-import {BrowserRouter as Router, Route, Link, NavLink, Routes} from 'react-router-dom'
-
-
-const Pokeapi = () => {
+const Pokemon = () => {
 
     const [pokeapi, setPokeapi] = useState([]);
 
@@ -77,12 +74,13 @@ const Pokeapi = () => {
             pokeapi.map((pokemon, index) => (
                             
                                 <div key={index}>
-                                    <h2>
-                                        <Link to={`/${pokemon.name}`}>
-                                                                {pokemon.name}
-                                        </Link>
-                                    </h2>
-                                </div>  
+                                    <h2>{pokemon.name}</h2>
+                                </div>
+                
+                                    // {/* {'Name:'} {pokemon.name}  */}
+                                    // {/* {' '}  */}
+                                    // {/* {'Gender:'} {pokemon.url} */}
+                                    // {/* <img src={pokemon.image} alt={pokemon.name} /> */}      
             ))
         )}        
         
@@ -91,4 +89,16 @@ const Pokeapi = () => {
      );
 }
  
-export default Pokeapi;
+export default Pokemon
+
+
+// personajes.map(function (personaje) {
+//     return (
+//         <div key={personaje.id}>
+//             {personaje.id}{'. '}
+//             {'Name:'} {personaje.name} 
+//             {' '} 
+//             {'Gender:'} {personaje.gender}
+//             <img src={personaje.image} alt={personaje.name} />
+//             </div>
+//     );
