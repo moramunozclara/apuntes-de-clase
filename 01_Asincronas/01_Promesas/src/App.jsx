@@ -8,7 +8,7 @@ function App() {
 
         <>
           <h1>Ejercicio 1. Promesas</h1>
-          <Pokeapi></Pokeapi>
+          <Pokeapi/>
         </>
   )
 
