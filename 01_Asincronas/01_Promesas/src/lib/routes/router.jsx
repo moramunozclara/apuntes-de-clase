@@ -20,7 +20,7 @@ const router = createBrowserRouter([
                 element: <Pokeapi/> 
             },
             {
-                path: ':name', //los children van sin barra pq ya trae path
+                path: 'pokemon/:name', //los children van sin barra pq ya trae path
                 element: <Pokemon/>
             },
             {

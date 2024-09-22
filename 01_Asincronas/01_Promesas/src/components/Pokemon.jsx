@@ -1,41 +1,31 @@
-import { useState, useEffect } from 'react'
-import '../css/Pokeapi.css'
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import '../css/Pokeapi.css';
 
 const Pokemon = () => {
 
-    const [pokeapi, setPokeapi] = useState([]);
+    const {name} = useParams();
 
-    const [error, setError] = useState("");
+    const [pokemonData, setPokemonData] = useState(null); // espera un objeto y sus datos
 
-    const [info, setInfo] = useState({
-        "count": 0,
-        "next": "null",
-        "previous": null,
-        "results": 0,
-    });
+    const [error, setError] = useState(""); // espera un string
+
 
     // versión con promesas + then catch
-    const getPokeAPI = () => {
-        fetch('https://pokeapi.co/api/v2/pokemon')
+    const getPokemonData = () => {
+        fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
 
         .then((response) => response.json())
 
         .then((data) => {
             console.log("Encontré lo siguiente: ", data);
-            setPokeapi(data.results);  // Accede al array dentro del objeto (los results dentro de data) y actualiza el estado inicial;
-            setInfo({
-                count: data.count,
-                next: data.next,
-                previous: data.previous,
-                results: data.results.length
-            });
+            setPokemonData(data);  // Accede al array dentro del objeto (los results dentro de data) y actualiza el estado inicial;
           })
         
         .catch((error) => {
                             console.error("Error al obtener los datos:", error);
                             setError("Hubo un error en la petición");
-                            setPokeapi([]);
-                            setInfo({});
+                            setPokemonData(null);
         });
     };
 
@@ -59,30 +49,39 @@ const Pokemon = () => {
     // };
 
     useEffect(() => {
-        getPokeAPI();
-    }, []);
+        getPokemonData();
+    }, [name]);
+
+
+
+    if (error) {
+        return <p>{error}</p>;
+      }
+    
+      // Si pokemonData es null, mostramos el mensaje de carga
+      if (!pokemonData) {
+        return <p>Cargando...</p>;
+      }
 
     return (
 
         // ETIQUETA VACÍA SIEMPRE, Y DENTRO TODO EL CODIGO 
         <>
-        <h2>Lista de Pokémon</h2>
-        {error && 
-                    <p>{error}</p>}
-    
-        {pokeapi.length > 0 && (
-            pokeapi.map((pokemon, index) => (
+
+        {pokemonData && (
                             
-                                <div key={index}>
-                                    <h2>{pokemon.name}</h2>
-                                </div>
-                
-                                    // {/* {'Name:'} {pokemon.name}  */}
-                                    // {/* {' '}  */}
-                                    // {/* {'Gender:'} {pokemon.url} */}
-                                    // {/* <img src={pokemon.image} alt={pokemon.name} /> */}      
-            ))
-        )}        
+            <div>
+                <h2>Pokémon: {name}</h2>
+                <p>Altura: {pokemonData.height}</p>
+                <p>Peso: {pokemonData.weight}</p>
+            </div>
+
+        )}
+        
+                                    {/* {'Name:'} {pokemon.name}  */}
+                                    {/* {' '}  */}
+                                    {/* {'Gender:'} {pokemon.url} */}
+                                    {/* <img src={pokemon.image} alt={pokemon.name} /> */}      
         
         </>
         

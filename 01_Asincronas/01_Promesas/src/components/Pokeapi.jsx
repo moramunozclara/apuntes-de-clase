@@ -19,7 +19,7 @@ const Pokeapi = () => {
 
     // versión con promesas + then catch
     const getPokeAPI = () => {
-        fetch('https://pokeapi.co/api/v2/pokemon')
+        fetch(`https://pokeapi.co/api/v2/pokemon`)
 
         .then((response) => response.json())
 
@@ -78,7 +78,7 @@ const Pokeapi = () => {
                             
                                 <div key={index}>
                                     <h2>
-                                        <Link to={`/${pokemon.name}`}>
+                                        <Link to={`/pokemon/${pokemon.name}`}>
                                                                 {pokemon.name}
                                         </Link>
                                     </h2>
