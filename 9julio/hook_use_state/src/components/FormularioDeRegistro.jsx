@@ -115,7 +115,7 @@ export const FormularioDeRegistro = () => {
             />
 
 
-            <button type="submit">Enviar!</button>
+            <button type="submit">Registrarse</button>
         </form>
         </>
      );    
