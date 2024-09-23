@@ -33,7 +33,8 @@ function App() {
         <ListaTareasBasica></ListaTareasBasica>
         <FormularioRegistro></FormularioRegistro>
         <GaleriaImagenes imageList={imageList}></GaleriaImagenes>
-        <Temporizador></Temporizador>
+        {/* <Temporizador></Temporizador> */} 
+        
 
 
     </>
