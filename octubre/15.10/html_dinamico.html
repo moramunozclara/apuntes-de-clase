@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="nombre" id="escribe un nombre">
+        <input type="submit" value="añadir">
+    </form>
+
+    <ul>
+        <li>no hay nombres registrados</li>
+    </ul>
+
+
+
+    <script>
+
+    const formulario = document.querySelector("form")
+    const input = document.querySelector('input[type="text"]');
+    const lista = document.querySelector("ul");
+
+
+    function addRegistro() {
+        formulario.addEventListener("submit", evento => {
+            evento.preventDefault(); // hacer que no se mande y se recargue la pág por defecto
+
+
+
+            console.log(input.value);
+
+
+            let item = document.createElement("li");
+            item.innerText = input.value;
+            lista.appendChild(item);
+            text.value= ""; //limpiar el input después de haber mandado un valor a la lista
+        });
+        
+    }
+
+
+
+    </script>
+</body>
+</html>

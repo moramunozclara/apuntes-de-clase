@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio</title>
+    <style>
+        * { margin: 0;
+            padding: 0;}
+
+        body { height: 100vh;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center
+
+            ;}
+        .cuadro {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+        .rojo {
+            background-color: red;
+        }
+        .azul {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="cuadro"></div>
+    <div class="cuadro"></div>
+    <div class="cuadro"></div>
+    <div class="cuadro"></div>
+    <div class="cuadro"></div>
+
+    <script>
+
+const cuadros = document.querySelectorAll(".cuadro");
+
+function cambiarColor() {
+    
+    cuadros.forEach((cuadro, i) => {
+        cuadro.addEventListener("click", () => {
+            
+            cuadro.classList.add("rojo");
+
+        });
+    });
+}
+
+// cambiarColor().then( () => {
+//     cuadros.forEach((cuadro, i) => {
+//         cuadro.addEventListener("click", () => {
+            
+//             cuadro.classList.toggle("azul");
+
+//         });
+//     });
+
+
+// } );
+
+
+cambiarColor().then( () => {
+
+        cuadro.addEventListener("click", () => {
+            
+            cuadro.classList.toggle("azul");
+
+        });
+
+
+
+} );
+
+
+
+    </script>
+    
+</body>
+</html>

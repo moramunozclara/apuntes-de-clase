@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        body{
+            height:100vh;
+            display:flex;
+            justify-content: space-evenly;
+            align-items:center;
+        }
+        .cuadro{
+            width:100px;
+            height:100px;
+            background-color:black;
+        }
+        .rojo{
+            background-color:red;
+        }
+        .azul{
+            background-color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="cuadro"></div>
+    <div class="cuadro"></div>
+    <div class="cuadro"></div>
+    <div class="cuadro"></div>
+    <div class="cuadro"></div>
+    <script>
+
+        const cuadros = document.querySelectorAll(".cuadro");
+
+        for(let i = 0; i < cuadros.length; i++){
+            let estado = 0;
+            cuadros[i].addEventListener("click", () => {
+                estado = estado < 2 ? estado + 1 : 0;
+                cuadros[i].className = "cuadro";
+                if(estado > 0){
+                    cuadros[i].classList.add(estado == 1 ? "rojo" : "azul");
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>

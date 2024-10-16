@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promesas</title>
+</head>
+<body>
+
+    <script>
+        function prueba() {
+                            // la función entre paréntesis es la promesa 
+                            // essta función puede tener 1 o 2 callbacks
+            return new Promise( function(callback) {
+                setTimeout(() => {
+
+                    callback();
+
+                }, Math.random() * 3000) // cuando termine ese intervalo se invoca el callback (tras cumplirse la promesa)
+            });
+        };
+
+        prueba().then( () => {
+            console.log("...promesa cumplida");
+        }        )
+    </script>
+    
+</body>
+</html>
