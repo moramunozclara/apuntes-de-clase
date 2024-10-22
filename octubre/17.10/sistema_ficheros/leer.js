@@ -9,6 +9,7 @@ fs.readFile("./prueba.txt", (error, contenido) => {
 });
 
 
+
 fs.readFile("./pruebaQueDaraErrorPorqueElFicheroNoExiste.txt", (error, contenido) => {
     if(error) { 
         return console.log("Ocurrió un error");
