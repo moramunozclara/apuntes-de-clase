@@ -1,5 +1,8 @@
+//CREAR UN SERVIDOR DE FICHEROS ESTÁTICOS
+//Si concuerda la peticióon, coon lo que tenemos, devolvérselo. Si no, devolver un 404
+
 const {createServer} = require("http");
-const {createReadStream} = require("fs");
+const {createReadStream, stat} = require("fs");
 
 function contentType(extension) {
     if(extension == "html") return "text/html";
@@ -9,8 +12,6 @@ function contentType(extension) {
 
     //si no es ningunoo de esos casos
     return "text/plain"
-
-
 
 };
 
@@ -30,15 +31,26 @@ function servirFichero(respuesta, ruta, tipo, status){
 
 createServer((peticion, respuesta) => {
 
-    servirFichero();
+    // servirFichero();
 
 
     if (peticion.url == "/") {
-        servirFichero(respuesta, "./estaticos/index.html", "html", 200);
+        servirFichero(respuesta, "./estaticos/index.html", contentType("html"), 200);
         
     } else {
-        servirFichero(respuesta, "./404.html", "html", 404);
-        
+        // servirFichero(respuesta, "./404.html", "", 404);
+       let ruta = "./estaticos" + peticion.url;
+
+    //    averiguar si el fichero existe
+    //  o realizar el callback
+    // callback: recibir el error o el null con su informacion
+       stat(ruta, (error, informacion) => {
+        if (!error && informacion.isFile()) {
+            return servirFichero(respuesta, ruta, contentType(ruta.split(".").pop()), 200)
+        }
+
+        servirFichero(respuesta, "./404.html", contentType("html"), 404);
+        });     
     }
 
     // respuesta.write("lo que sea");
@@ -47,3 +59,13 @@ createServer((peticion, respuesta) => {
     // respuesta.end();
 
 }).listen(4000);
+
+
+
+// cambiar color aleatorio
+
+const body = document.querySelector("body");
+
+
+
+body.style.backgroundColor = `rgb(${[0,0,0].map(() => Math.floor(Math.random() * 256)).join(",")})`;

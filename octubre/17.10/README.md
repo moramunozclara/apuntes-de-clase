@@ -212,3 +212,12 @@ javascript solo me da la posibilidad de abrir un puerto y hacer peticiones
 crearemos un sistema que reciba peticiiones y servir algo si coinciden las peticiones con lo qeue tenemos 
 
 si ese fichero existe en  la carpeta státicos, se sirva
+
+
+
+
+-------------
+
+23 octubre:
+
+STAT -----> método del sistema de ficheros para revisar las estadísticas de un fichero o directorio
