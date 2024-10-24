@@ -108,3 +108,21 @@ fetch retorna una promesa. esa promesa genera la respuesta sin procesar
 
 la respuesta la vamos a procesar como dos formatos posibles (texto -string-, o JSON). 
 Ambos métodos de procesamiento rretornan promesas
+
+
+
+------------------------
+
+
+IaaS -> Infraestructure as a Service -- > proofesión de devops
+
+PaaS -> Platform as a Service
+Hay un proveedor entre medias 
+
+Render:
+- Static websites: con dominio, y para front end. solo almacena y sirve los ficheros
+- Web services: 
+
+
+ci / cd: continuous deployment
+me brinda un servidor virtual
