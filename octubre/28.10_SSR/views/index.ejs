@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Estructura de control -->
+    <ul>
+        <% if (estudiantes.length > 0) { %>
+            <% for (let i = 0; i < estudiantes.length; i++) { %>
+                <li><%= estudiantes[i].nombre %>, edad: <%= estudiantes[i].edad %></li>
+            <% } %>
+
+        <% } else { %>
+            <li>No hay estudiantes registrados</li>
+        <% } %>
+
+
+
+    </ul>
+
+    <form action="" method="POST">
+        <input type="text" placeholder="nombre" name="nombre" >
+        <input type="submit" value="registrar estudiante">
+
+    </form>
+</body>
+</html>
