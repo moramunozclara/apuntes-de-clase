@@ -23,7 +23,7 @@ function leerEstudiantes(){
 };
 
 function registrarEstudiante(estudiante) { //nombre, edad son lso datos que se recibira dfel estudiante
-    return new Promise( async (resolve, reject) => {
+    return new Promise( async (resolve) => {
         // writeFile("./data/estudiantes.JSON", (error, contenido) => {
             // if (!error) { 
             //     resolve(JSON.parse(contenido.toString())) }
@@ -36,41 +36,28 @@ function registrarEstudiante(estudiante) { //nombre, edad son lso datos que se r
             
             // registrar un id nuevo por encima del último (un dato serial)
             let id = estudiantes.length > 0 ? estudiantes[estudiantes.length - 1].id + 1 : 1;
+            
+            estudiantes.push({...estudiante,id});
 
             //                  dónde  -   qué quiero escribir  -  callback en caso de error
             writeFile("./data/estudiantes.JSON", JSON.stringify(estudiantes), error => {
-// PROBAR ERROR CAMBIANDO LA RUTA AL FICHERO POR UNA INCORRECTA
+            // PROBAR ERROR CAMBIANDO LA RUTA AL FICHERO POR UNA INCORRECTA
 
                 if (!error) {
 
                     resolve({error : false});
 
+                } 
 
-                    
-
-                } else {
-                    
-                    reject(
-
-                        {error: "Error escribiendo el ficheroo"}
-                        // console.log("Error escribiendo el ficheroo")
-                        
-                        );
-
-                }
-
+                resolve({error : "Error escribiendo el ficheroo"});
             });
-
 
         } catch (error) {
 
-            reject(console.log("Error escribiendo el ficheroo"));
+            resolve({error : "Error escribiendo el ficheroo"})
 
-
-            
         }
 
-        // })        
     })
 };
 
@@ -116,14 +103,13 @@ servidor.post("/registro", async (peticion, respuesta) => {
         let {nombre} = peticion.body;
                                      // entre 20 y 40
         let edad = Math.floor(Math.random() * 21) + 20;
-
             
         let {error} = await registrarEstudiante({nombre, edad});
 
 
     if (!error) {
             // si  no hay error, si todo sale bien , redirigir al inicio
-            respuesta.redirect("/");
+            return respuesta.redirect("/");
     }
 
     respuesta.status(500);
@@ -144,10 +130,60 @@ servidor.post("/registro", async (peticion, respuesta) => {
 
 });
 
-servidor.get("/borrar/:id", (peticion, respuesta) => {
-    respuesta.send(`El valor de tal es ${peticion.params.id}`);
 
-});
+
+
+
+
+function borrarEstudiante(estudiante) { //nombre, edad son lso datos que se recibira dfel estudiante
+    return new Promise(async (resolve) => {
+
+        try {
+
+            // usando filter, el array se quedará con los estudiantes que no coinciden con el id
+            // usamos leerEstudiantes que ya lo tenemos
+            let estudiantes = await leerEstudiantes();
+
+            estudiantes = estudiantes.filter(estudiante => estudiante.id != id);
+
+            writeFile("./data/estudiantes.JSON", JSON.stringify(estudiantes), error => { 
+                if (!error) {
+                    resolve({error : false})
+                }
+                resolve({error : "Error sobreescribiendo el fichero"})
+
+            })
+            
+        } catch (error) {
+            resolve({error : "Error leyendo el fichero"})
+            
+        }
+
+
+        
+    })
+
+};
+
+
+
+servidor.get("/borrar/:id", async (peticion, respuesta) => {
+            // respuesta.send(`El valor de tal es ${peticion.params.id}`);
+            // respuesta.send(`El valor de tal es ${peticion.params.id}`);
+        
+            let id = Number(peticion.params.id);
+
+            let {error} = await borrarEstudiante(id);
+
+            if(!error) {
+                return respuesta.redirect("/");
+            }
+
+
+            respuesta.status(500)
+            respuesta.send("Error en el servidor");
+        
+        });
 
 
                 // puerto

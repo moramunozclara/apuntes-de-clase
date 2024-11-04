@@ -62,8 +62,10 @@ action: URL de procesamiento
 
 ?nombre=Andrea&edad=21 ----> URL ENCODED
 
+-------------------------------------------
 
 
+form data ---> ficheros -----> multer (multipart/form-data)
 
 
 TODO LO QUE NO SEA "GET" O "POST" SE HARÁ MEDIANTE FETCH
@@ -71,6 +73,7 @@ TODO LO QUE NO SEA "GET" O "POST" SE HARÁ MEDIANTE FETCH
 
 "data" es el evento que salta cada vez que hay un flujo de LECTURA
 
+-------------------------------------------
 
 
 EXPRESS --> BODY PARSER:  proocesa el cuerpo de la peticióon y lo convierte en un objeto
@@ -84,14 +87,97 @@ EXPRESS --> BODY PARSER:  proocesa el cuerpo de la peticióon y lo convierte en 
             form.data -----> ficheros -----> MULTER (multiparse form data)
 
 
+            body parser --> urlencoded 
 
+            "nombre=joaquín&edad=44&asignatura=fullstack"
+            peticion.body ---> {
+                nombre : "Joaquín",
+                edad : 44,
+                asignatura : "fullstack"
+            }
+
+------------------
 
 ...spread operator
 
 extiende la informacion de una estructura de datos, de una a otra
 
- es mejor que FOR porque me permite poner todo el listado SEPARADO POR COMAS, por ejemplo
+ es mejor que FOR porque me permite poner todo el listado SEPARADO POR COMAS, por ejemplo:
+
+        let nombres = ["René","Julián","Clara"]
+
+        "René","Julián","Clara"
+        nombres[0],nombres[1],nombres[2]
+
+        ...nombres ---> "René","Julián","Clara"
+
+--------------
+
+
+ THROW error
+
+
+--------------
+
+PARAMS 
+
+/x/y/:z ---> z --> parámetro, segmento dinámico de la URL ---> PETICIÓN.params 
+
+/prueba/:a/:b 
+
+/prueba/3/hola 
+
+peticion.params --> { a : 3, b : "hola" }
 
 
 
- THROW
+-----
+
+EJERCICIO:
+ - BORRAR AL ESTUDIANTE DEL FICHERO JSON
+ - SI LO LOGRA, REDIRIGIR AL INDEX
+ - SI FALLA MOSTRAR UN ERROR
+
+
+ -----
+
+
+ OOP ---> Object Oriented Programming
+
+ Un objeto es una entidad de un sistema
+
+
+MÉTODOS -->  acciones que puede llevar a caboo
+PROPIEDADES --> características
+ 
+CLASE --> instrucciones apra crear un objeto
+INSTANCIA --> objeto creado a partir de una CLASE
+
+Objetos en JS -->  son coonstruidos en base a PROTOTIPOS funcionales
+
+
+-------------------
+
+THIS -->  noos dice el contexto de ejecución
+
+
+la diferencia entre las funciones tradicionales y las funciones flecha es que las funciones flecha () => {} no crean un contexto propio, asi que THIS será el contexto externo
+
+trabajando orientado a  objetos, muchas veces trabajaremos "contra el DOM", eje,plo
+En funcion flecha: 
+    BOTON.addEventListener("x", () => {})
+- el This es:
+
+En funcióon tradicioonal:
+    BOTON.addEventListener("x", function(){})
+- el This es: el target del evento (el botón)
+
+
+class Nombreenmayuscula {
+     // dentro de la clase van todos los metoodos y propiedades
+
+}
+
+método cosntructor (funcion constructora) ---> función que crea una instancia de la clase ---> se ejectura al momento de instanciar la clase
+
+lo primero que hago es su funcion constructora, y para ello utilizo constructor(){}
