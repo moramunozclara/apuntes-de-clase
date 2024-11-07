@@ -107,3 +107,18 @@ postgres se usa con AWAIT. Invocamos petición asíncrona.
 
 `bla bla bla bla ${expresiones}`
 
+--------------
+
+
+
+5 Noviembre
+
+prueba unitaria / unit test
+
+https://jasmine.github.io/
+
+TDD Test driven development -- red - green - refactor
+
+
+
+
