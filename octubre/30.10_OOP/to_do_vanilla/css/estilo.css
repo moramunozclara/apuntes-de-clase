@@ -60,14 +60,10 @@ form input[type="submit"]{
     border-bottom:1px dashed #999;
     padding-bottom:5px;
 }
-.tarea .visible{
+
+.tarea input.visible, .tarea .visible {
     display:block;
 }
-/* /// */
-
-
-
-
 
 .boton{
     background-color:transparent;
