@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .resaltado {color: red; outline:2px solid red}
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="" value="">
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla expedita sed harum magni nihil quae quod reiciendis cum modi possimus, neque illo voluptatum quo, impedit quia in esse sit sint.</p>
+
+    <script>
+        
+        const input = document.querySelector("input");
+        const parrafo = document.querySelector("p");
+
+        let textoOriginal = parrafo.innerText;
+
+        input.addEventListener("input", () => {
+            let expresion = new RegExp(input.value,"ig");
+
+            parrafo.innerHTML = textoOriginal.replace(expresion, match => {
+                return `<span class="resaltado">${match}</span>`;
+            });
+        });
+
+            
+            console.log(texto.split(/(_|\*|\+)/));
+
+    </script>
+</body>
+</html>
