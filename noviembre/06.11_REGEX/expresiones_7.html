@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bien{outline:2px solid green}
+        .mal {outline:2px solid red}
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="" value="">
+
+    <script>
+
+        const input = document.querySelector("input");
+                                //  grupo
+        let expresion = /^[A-ZÁÉÍÓÚÑ](\.|[a-záéíóúñ]+) [A-ZÁÉÍÓÚÑ](\.|[a-záéíóúñ]+)$/;
+               
+        input.addEventListener("input", function() {
+
+            input.className = "";
+
+            input.classList.add(expresion.test(input.value) ? "bien" : "mal");
+            // si la REGEX pasa el test, añadir clase bien, si no lo pasa, clasemal
+
+            // ^inicio del input
+            // $final del input a evaluar
+            console.log(input.value);
+        });
+
+    </script>
+</body>
+</html>

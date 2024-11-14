@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bien{outline:2px solid green}
+        .mal {outline:2px solid red}
+    </style>
+</head>
+<body>
+    <input type="text" name="" id="" value="">
+
+    <script>
+
+        // let texto = "rojo, amarillo, verde, azul";
+
+        let texto = "rojo_amarillo*verde+azul";
+
+                            
+        // grupo de REGEX: ABRIMOS REGEX y ponemos el O | entre ellos
+        // los sçimbolos que ya tengan funciones asignadas requieren backslash
+        console.log(texto.split(/(_|\*|\+)/));
+
+    </script>
+</body>
+</html>
