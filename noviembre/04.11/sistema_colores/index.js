@@ -9,6 +9,7 @@ servidor.use(express.static("./front"));
 servidor.use(express.json());
 
 
+
 servidor.get("/colores", async(peticion, respuesta) => {
     try {
 

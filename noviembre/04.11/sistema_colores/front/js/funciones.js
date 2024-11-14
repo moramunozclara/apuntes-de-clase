@@ -4,6 +4,9 @@ const formulario = document.querySelector("form");
 const inputText = document.querySelector('input[type="text"]');
 
 class Color {
+    // Un constructor es un método especial dentro de la clase Color,
+    // utilizado para inicializar los objetos de una clase cuando se crean.
+    // Se usa para configurar los VALORES INICIALES del objeto.
     constructor(id, r,g,b,contenedor){
         this.id = id;
         this.DOM =null;
@@ -18,12 +21,11 @@ class Color {
 
         this.DOM.addEventListener("click", () => {
 
-            fetch("/borrar", {
+            fetch("/borrar", { // por qué no aparece ASYNC?
                 method : "DELETE",
                 body :  JSON.stringify({ id : this.id }),
                 headers : { "Content-type" : "application/json"}
             })
-
 
             .then(respuesta => respuesta.json())
             .then(resultado => {
@@ -35,11 +37,11 @@ class Color {
             .catch(error => {
                 console.log(error);
                 parrafoError.innerText = "error al borrar el color";
-                parrafoError.classList.add("visible");
+                parrafoError.classList.add("visible"); // Mostramos el párrafo de ERROR
 
                 setTimeout(() => {
                     parrafoError.classList.remove("visible");
-                }, 2000); // Ocultar el mensaje después de 2 segundos
+                }, 2000); // Ocultar el párrafo de ERROR después de 2 segundos
             });
 
         });
@@ -55,7 +57,8 @@ fetch("/colores")
 .then(respuesta => respuesta.json())
 .then(colores => {
     colores.forEach(({id, r,g,b}) => {
-        new Color(id,r,g,b,lista);
+        new Color(id,r,g,b,lista);  // TUTORÍA: es new promise? NO
+                                    // por qué no un MAP? 
     });
 });
 
@@ -69,14 +72,27 @@ formulario.addEventListener("submit", evento => {
 
         // return console.log("todo OK");
 
-        let [r,g,b] = inputText.value.split(",").map(n => Number(n));
+        // let [r,g,b] = inputText.value.split(",").map(n => Number(n));
+        let valores = inputText.value.split(",").map(n => Number(n));
 
         let valido = true;
 
-        [r,g,b].forEach( n => valido = valido && n <= 255);
+                        // // valido es la variable que almacena el estado
+        // [r,g,b].forEach( n => valido = valido && n <= 255);
 
+        let i = 0;
+
+        //  200, 10, 5
+        while( valido && i < valores.length ) {
+                    // posición del array 
+            valido =  valores[i] <= 255; // comprobar si el 1º, 2º y 3o es menor a 255
+
+            i++  
+        }
 
         if(valido){
+
+            let [r,g,b] = valores;
 
             return fetch("/crear",{
                 method: "POST",

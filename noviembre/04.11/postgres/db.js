@@ -85,9 +85,6 @@ export function borrarColor(id) {
 
 
 
-
-
-
 leerColores()
     .then(colores => console.log(colores))
     .catch(error => console.log(error));

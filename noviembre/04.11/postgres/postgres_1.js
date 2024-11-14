@@ -1,6 +1,5 @@
 import postgres from "postgres";
 
-
 ( async () => {
 
     // 1º creo conexion

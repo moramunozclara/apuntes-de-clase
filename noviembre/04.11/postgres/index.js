@@ -4,7 +4,7 @@ import { leerColores, crearColores, borrarColor } from "./db.js";
 const servidor = express();
 const PORT = 4000;
 
-
+// TUTORÍA: es lo mismo que hacer fetch?
 servidor.get("/colores", async(peticion, respuesta) => {
     try {
 
