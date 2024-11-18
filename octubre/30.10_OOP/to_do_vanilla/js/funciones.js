@@ -23,13 +23,13 @@ formulario.addEventListener("submit", evento => {
 
         fetch("http://localhost:4000/tareas/nueva", {
             method: "POST",
-            body: JSON.stringify({title}), // incluir input text value trim
+            body: JSON.stringify({title}),
             headers: {
                 "Content-type" : "application/json"
             }
         })
 
-        .then(respuesta => respuesta.json())
+        .then(respuesta => respuesta.json()) // '{ "id" : 37 }' a  { id : 37 }
         // .then( x => { console.log(x); });
         .then(({id, error}) => {
             if (!error) {
